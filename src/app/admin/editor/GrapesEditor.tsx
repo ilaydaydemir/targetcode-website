@@ -640,6 +640,12 @@ export default function GrapesEditor() {
             storageManager: false,
             undoManager: { trackSelection: false },
             selectorManager: { componentFirst: true },
+            assetManager: {
+              upload: '/api/cms/upload',
+              uploadName: 'files[]',
+              multiUpload: true,
+              autoAdd: true,
+            },
             plugins: [
               gjsPresetWebpage,
               gjsBlocksBasic,
