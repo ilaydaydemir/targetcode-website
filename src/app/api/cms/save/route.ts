@@ -21,6 +21,7 @@ export async function PUT(req: NextRequest) {
     await put('pages/draft-project.json', JSON.stringify(projectData), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
     })
 
     return NextResponse.json({ ok: true })

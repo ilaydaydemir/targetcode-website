@@ -22,6 +22,7 @@ export async function POST(req: NextRequest) {
     await put('pages/published.html', html, {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
     })
 
     // Save published CSS
@@ -29,6 +30,7 @@ export async function POST(req: NextRequest) {
       await put('pages/published.css', css, {
         access: 'public',
         addRandomSuffix: false,
+      allowOverwrite: true,
       })
     }
 
@@ -37,6 +39,7 @@ export async function POST(req: NextRequest) {
       await put('pages/draft-project.json', JSON.stringify(projectData), {
         access: 'public',
         addRandomSuffix: false,
+      allowOverwrite: true,
       })
     }
 
