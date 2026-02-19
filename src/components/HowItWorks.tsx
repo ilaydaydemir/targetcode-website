@@ -44,7 +44,7 @@ export function HowItWorks() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-primary mb-3"
+            className="text-sm font-medium text-clay-teal mb-3"
           >
             HOW IT WORKS
           </motion.p>
@@ -84,10 +84,10 @@ export function HowItWorks() {
                 <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border -translate-x-4 z-0" />
               )}
               <div className="relative z-10">
-                <div className="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-5">
-                  <step.icon className="size-7 text-primary" />
+                <div className="size-16 rounded-2xl bg-clay-teal/10 flex items-center justify-center mb-5">
+                  <step.icon className="size-7 text-clay-teal" />
                 </div>
-                <span className="text-xs font-bold text-primary/60 tracking-widest">
+                <span className="text-xs font-bold text-clay-teal/60 tracking-widest">
                   STEP {step.step}
                 </span>
                 <h3 className="text-lg font-semibold mt-1 mb-2">{step.title}</h3>

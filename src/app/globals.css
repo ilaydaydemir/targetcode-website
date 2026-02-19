@@ -11,7 +11,9 @@
   --color-border: #e2e8f0;
   --color-card: #ffffff;
   --color-card-foreground: #0f172a;
-  --color-section-alt: #f8fafc;
+  --color-section-alt: #f9fafb;
+  --color-clay-teal: #38bec9;
+  --color-clay-orange: #f97316;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
@@ -27,21 +29,15 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-background);
+  background: #f9fafb;
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Grid dot pattern for hero */
-.dot-pattern {
-  background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%);
+  background: linear-gradient(135deg, #38bec9 0%, #2563eb 50%, #38bec9 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,7 +52,7 @@ body {
 
 /* Glow effect */
 .glow {
-  box-shadow: 0 0 60px rgba(37, 99, 235, 0.15), 0 0 120px rgba(124, 58, 237, 0.08);
+  box-shadow: 0 0 60px rgba(56, 190, 201, 0.15), 0 0 120px rgba(249, 115, 22, 0.08);
 }
 
 /* Floating animation */

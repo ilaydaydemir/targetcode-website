@@ -13,7 +13,7 @@ export function SelfBuilding() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-primary mb-3"
+            className="text-sm font-medium text-clay-teal mb-3"
           >
             THE MAGIC
           </motion.p>
@@ -51,9 +51,9 @@ export function SelfBuilding() {
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               <div className="px-6 py-4 border-b border-border bg-muted/50">
                 <div className="flex items-center gap-2">
-                  <Code2 className="size-5 text-primary" />
+                  <Code2 className="size-5 text-clay-teal" />
                   <h3 className="font-semibold">AI Component Builder</h3>
-                  <span className="ml-auto text-xs bg-primary/10 text-primary rounded-full px-2.5 py-0.5 font-medium">
+                  <span className="ml-auto text-xs bg-clay-teal/10 text-clay-teal rounded-full px-2.5 py-0.5 font-medium">
                     Vibe
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export function SelfBuilding() {
               <div className="p-6 space-y-4">
                 {/* Chat simulation */}
                 <div className="space-y-3">
-                  <div className="ml-8 rounded-lg bg-primary/10 px-4 py-2.5 text-sm">
+                  <div className="ml-8 rounded-lg bg-clay-teal/10 px-4 py-2.5 text-sm">
                     Build me a pipeline dashboard widget that shows conversion
                     rates by stage with a bar chart
                   </div>
@@ -81,7 +81,7 @@ export function SelfBuilding() {
                     <Eye className="size-3" />
                     Live Preview
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-primary bg-primary/10 rounded-lg px-3 py-1.5 font-medium">
+                  <div className="flex items-center gap-1.5 text-xs text-clay-teal bg-clay-teal/10 rounded-lg px-3 py-1.5 font-medium">
                     <Save className="size-3" />
                     Save to Library
                   </div>
@@ -91,24 +91,24 @@ export function SelfBuilding() {
 
             <div className="mt-6 space-y-3">
               <h4 className="font-semibold flex items-center gap-2">
-                <Component className="size-4 text-primary" />
+                <Component className="size-4 text-clay-teal" />
                 How Vibe Works
               </h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">1.</span>
+                  <span className="text-clay-teal font-bold">1.</span>
                   Describe any widget, page, or workflow step in plain English
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">2.</span>
+                  <span className="text-clay-teal font-bold">2.</span>
                   AI generates production-ready React/TSX code instantly
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">3.</span>
+                  <span className="text-clay-teal font-bold">3.</span>
                   Preview it live in a sandboxed environment
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">4.</span>
+                  <span className="text-clay-teal font-bold">4.</span>
                   Save to your component library with versioning
                 </li>
               </ul>
@@ -125,7 +125,7 @@ export function SelfBuilding() {
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               <div className="px-6 py-4 border-b border-border bg-muted/50">
                 <div className="flex items-center gap-2">
-                  <Wrench className="size-5 text-primary" />
+                  <Wrench className="size-5 text-clay-teal" />
                   <h3 className="font-semibold">Self-Building Scrapers</h3>
                   <span className="ml-auto text-xs bg-green-500/10 text-green-600 rounded-full px-2.5 py-0.5 font-medium">
                     Automated
@@ -195,28 +195,28 @@ export function SelfBuilding() {
 
             <div className="mt-6 space-y-3">
               <h4 className="font-semibold flex items-center gap-2">
-                <Zap className="size-4 text-primary" />
+                <Zap className="size-4 text-clay-teal" />
                 What We Built for You
               </h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">&bull;</span>
+                  <span className="text-clay-teal font-bold">&bull;</span>
                   Multi-step workflow engine with drag-and-drop builder
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">&bull;</span>
+                  <span className="text-clay-teal font-bold">&bull;</span>
                   Apify integration for any web scraping actor
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">&bull;</span>
+                  <span className="text-clay-teal font-bold">&bull;</span>
                   AI-powered data transformation and enrichment
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">&bull;</span>
+                  <span className="text-clay-teal font-bold">&bull;</span>
                   Background job processing with progress tracking
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-primary font-bold">&bull;</span>
+                  <span className="text-clay-teal font-bold">&bull;</span>
                   Auto-mapping of scraped data to your contact fields
                 </li>
               </ul>

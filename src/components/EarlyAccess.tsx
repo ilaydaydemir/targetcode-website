@@ -59,12 +59,12 @@ export function EarlyAccess() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 w-full rounded-xl border border-border bg-card px-5 py-3.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                className="flex-1 w-full rounded-xl border border-border bg-card px-5 py-3.5 text-sm outline-none focus:border-clay-teal focus:ring-2 focus:ring-clay-teal/20 transition-all"
               />
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto rounded-xl bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full sm:w-auto rounded-xl bg-clay-teal px-8 py-3.5 text-sm font-medium text-white hover:bg-clay-teal/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {loading ? (
                   <Loader2 className="size-4 animate-spin" />

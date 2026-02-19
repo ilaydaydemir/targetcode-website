@@ -77,15 +77,18 @@ const itemVariants = {
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-section-alt">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="features" className="relative py-24 bg-white overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-clay-teal/5 rounded-full" />
+      <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-24 h-24 bg-clay-orange/5 rounded-full" />
+      <div className="relative mx-auto max-w-6xl px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-primary mb-3"
+            className="text-sm font-medium text-clay-teal mb-3"
           >
             EVERYTHING INCLUDED
           </motion.p>
@@ -121,10 +124,10 @@ export function Features() {
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="group rounded-2xl border border-border bg-card p-6 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+              className="group rounded-2xl border border-border bg-card p-6 hover:shadow-lg hover:border-clay-teal/20 transition-all duration-300"
             >
-              <div className="size-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                <feature.icon className="size-5 text-primary" />
+              <div className="size-10 rounded-xl bg-clay-teal/10 flex items-center justify-center mb-4 group-hover:bg-clay-teal/15 transition-colors">
+                <feature.icon className="size-5 text-clay-teal" />
               </div>
               <h3 className="text-base font-semibold mb-2">{feature.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">

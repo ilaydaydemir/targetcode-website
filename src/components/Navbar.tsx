@@ -30,7 +30,8 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tight">
-          <span className="text-primary">Target</span>Code
+          <span className={scrolled ? 'text-clay-teal' : 'text-clay-teal'}>Target</span>
+          <span className={scrolled ? 'text-gray-900' : 'text-white'}>Code</span>
         </a>
 
         {/* Desktop */}
@@ -39,14 +40,18 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm transition-colors ${
+                scrolled
+                  ? 'text-muted-foreground hover:text-foreground'
+                  : 'text-gray-300 hover:text-white'
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
             href="#early-access"
-            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="rounded-lg bg-clay-teal px-5 py-2.5 text-sm font-medium text-white hover:bg-clay-teal/90 transition-colors"
           >
             Get Early Access
           </a>
@@ -57,7 +62,11 @@ export function Navbar() {
           className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {mobileOpen ? (
+            <X className={`size-5 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+          ) : (
+            <Menu className={`size-5 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+          )}
         </button>
       </div>
 
@@ -76,7 +85,7 @@ export function Navbar() {
           ))}
           <a
             href="#early-access"
-            className="block rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-center text-primary-foreground"
+            className="block rounded-lg bg-clay-teal px-5 py-2.5 text-sm font-medium text-center text-white"
             onClick={() => setMobileOpen(false)}
           >
             Get Early Access

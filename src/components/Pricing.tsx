@@ -65,7 +65,7 @@ export function Pricing() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-primary mb-3"
+            className="text-sm font-medium text-clay-teal mb-3"
           >
             PRICING
           </motion.p>
@@ -100,12 +100,12 @@ export function Pricing() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`rounded-2xl border p-8 flex flex-col ${
                 plan.highlighted
-                  ? 'border-primary bg-card shadow-xl glow relative'
+                  ? 'border-clay-teal bg-card shadow-xl glow relative'
                   : 'border-border bg-card'
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium bg-primary text-primary-foreground rounded-full px-4 py-1">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium bg-clay-teal text-clay-teal-foreground rounded-full px-4 py-1">
                   Most Popular
                 </div>
               )}
@@ -124,7 +124,7 @@ export function Pricing() {
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="size-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="size-4 text-clay-teal shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
@@ -133,7 +133,7 @@ export function Pricing() {
                 href="#early-access"
                 className={`block rounded-xl py-3 text-sm font-medium text-center transition-colors ${
                   plan.highlighted
-                    ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+                    ? 'bg-clay-teal text-clay-teal-foreground hover:bg-clay-teal/90'
                     : 'border border-border text-foreground hover:bg-muted'
                 }`}
               >
