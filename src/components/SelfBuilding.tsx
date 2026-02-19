@@ -1,14 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bot, Code2, Eye, Save, Wrench, Zap } from 'lucide-react'
+import { Bot, Eye, Save, Zap } from 'lucide-react'
 
 export function SelfBuilding() {
   return (
-    <section id="self-building" className="py-24 bg-section-alt">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="self-building" className="relative py-24 bg-section-alt overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-clay-teal/5 rounded-full" />
+      <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-24 h-24 bg-clay-orange/5 rounded-full" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -31,7 +35,7 @@ export function SelfBuilding() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-gray-600"
           >
             TargetCode doesn&apos;t just run automations — it builds new features on demand.
             Describe what you need, and the platform generates working React
@@ -41,60 +45,68 @@ export function SelfBuilding() {
 
         {/* Two columns */}
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* AI Component Builder (Vibe) */}
+          {/* AI Component Builder (Vibe) — with code terminal */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-2xl border border-border bg-card overflow-hidden">
-              <div className="px-6 py-4 border-b border-border bg-muted/50">
-                <div className="flex items-center gap-2">
-                  <Code2 className="size-5 text-clay-teal" />
-                  <h3 className="font-semibold">AI Component Builder</h3>
-                  <span className="ml-auto text-xs bg-clay-teal/10 text-clay-teal rounded-full px-2.5 py-0.5 font-medium">
+            <div className="relative">
+              {/* Code terminal mockup — like old site WhyDifferent */}
+              <div className="bg-gray-950 rounded-lg shadow-xl overflow-hidden border border-gray-700">
+                <div className="flex items-center p-3 bg-gray-900 border-b border-gray-800">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full" />
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full" />
+                  </div>
+                  <div className="ml-4 text-xs text-gray-400 font-[var(--font-roboto-mono)]">
+                    vibe-builder.tsx
+                  </div>
+                  <span className="ml-auto text-xs bg-clay-teal/20 text-clay-teal rounded-full px-2.5 py-0.5 font-medium">
                     Vibe
                   </span>
                 </div>
-              </div>
-              <div className="p-6 space-y-4">
-                {/* Chat simulation */}
-                <div className="space-y-3">
-                  <div className="ml-8 rounded-lg bg-clay-teal/10 px-4 py-2.5 text-sm">
-                    Build me a pipeline dashboard widget that shows conversion
-                    rates by stage with a bar chart
-                  </div>
-                  <div className="mr-8 rounded-lg bg-muted px-4 py-2.5 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Bot className="size-3.5" />
-                      <span className="text-xs font-medium">AI</span>
+                <div className="p-4 space-y-4">
+                  {/* Chat simulation */}
+                  <div className="space-y-3">
+                    <div className="ml-8 rounded-lg bg-clay-teal/10 px-4 py-2.5 text-sm text-white">
+                      Build me a pipeline dashboard widget that shows conversion
+                      rates by stage with a bar chart
                     </div>
-                    I&apos;ve generated a PipelineDashboard component with
-                    interactive bar charts, stage labels, and conversion
-                    percentages. Here&apos;s the live preview →
+                    <div className="mr-8 rounded-lg bg-gray-800 px-4 py-2.5 text-sm text-gray-300">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Bot className="size-3.5 text-clay-teal" />
+                        <span className="text-xs font-medium text-clay-teal">AI</span>
+                      </div>
+                      I&apos;ve generated a PipelineDashboard component with
+                      interactive bar charts, stage labels, and conversion
+                      percentages. Here&apos;s the live preview →
+                    </div>
                   </div>
-                </div>
-                {/* Actions */}
-                <div className="flex gap-2 pt-2">
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted rounded-lg px-3 py-1.5">
-                    <Eye className="size-3" />
-                    Live Preview
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-clay-teal bg-clay-teal/10 rounded-lg px-3 py-1.5 font-medium">
-                    <Save className="size-3" />
-                    Save to Library
+                  {/* Actions */}
+                  <div className="flex gap-2 pt-2">
+                    <div className="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-800 rounded-lg px-3 py-1.5">
+                      <Eye className="size-3" />
+                      Live Preview
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs text-clay-teal bg-clay-teal/10 rounded-lg px-3 py-1.5 font-medium">
+                      <Save className="size-3" />
+                      Save to Library
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Blur blobs */}
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-clay-teal/10 rounded-full blur-md" />
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-clay-orange/10 rounded-full blur-md" />
             </div>
 
             <div className="mt-6 space-y-3">
-              <h4 className="font-semibold flex items-center gap-2">
-                <Component className="size-4 text-clay-teal" />
-                How Vibe Works
-              </h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h4 className="text-xl font-bold">How Vibe Works</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex gap-2">
                   <span className="text-clay-teal font-bold">1.</span>
                   Describe any widget, page, or workflow step in plain English
@@ -115,26 +127,30 @@ export function SelfBuilding() {
             </div>
           </motion.div>
 
-          {/* Self-Building Scrapers */}
+          {/* Self-Building Scrapers — with code terminal */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-2xl border border-border bg-card overflow-hidden">
-              <div className="px-6 py-4 border-b border-border bg-muted/50">
-                <div className="flex items-center gap-2">
-                  <Wrench className="size-5 text-clay-teal" />
-                  <h3 className="font-semibold">Self-Building Scrapers</h3>
-                  <span className="ml-auto text-xs bg-green-500/10 text-green-600 rounded-full px-2.5 py-0.5 font-medium">
-                    Automated
+            <div className="relative">
+              <div className="bg-gray-950 rounded-lg shadow-xl overflow-hidden border border-gray-700">
+                <div className="flex items-center p-3 bg-gray-900 border-b border-gray-800">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full" />
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full" />
+                  </div>
+                  <div className="ml-4 text-xs text-gray-400 font-[var(--font-roboto-mono)]">
+                    workflow-engine.ts
+                  </div>
+                  <span className="ml-auto text-xs bg-green-500/20 text-green-400 rounded-full px-2.5 py-0.5 font-medium">
+                    Running
                   </span>
                 </div>
-              </div>
-              <div className="p-6 space-y-4">
-                {/* Workflow steps visualization */}
-                <div className="space-y-3">
+                <div className="p-4 space-y-3">
+                  {/* Workflow steps visualization */}
                   {[
                     {
                       step: 'Apify Scraper',
@@ -159,7 +175,7 @@ export function SelfBuilding() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 rounded-lg border border-border px-4 py-3"
+                      className="flex items-center gap-3 rounded-lg border border-gray-700 bg-gray-900 px-4 py-3"
                     >
                       <div
                         className={`size-2 rounded-full ${
@@ -167,22 +183,22 @@ export function SelfBuilding() {
                             ? 'bg-green-500'
                             : item.status === 'running'
                             ? 'bg-yellow-500 animate-pulse'
-                            : 'bg-gray-300'
+                            : 'bg-gray-600'
                         }`}
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium">{item.step}</p>
-                        <p className="text-xs text-muted-foreground truncate">
+                        <p className="text-sm font-medium text-white">{item.step}</p>
+                        <p className="text-xs text-gray-400 truncate">
                           {item.desc}
                         </p>
                       </div>
                       <span
                         className={`text-xs px-2 py-0.5 rounded-full ${
                           item.status === 'completed'
-                            ? 'bg-green-500/10 text-green-600'
+                            ? 'bg-green-500/10 text-green-400'
                             : item.status === 'running'
-                            ? 'bg-yellow-500/10 text-yellow-600'
-                            : 'bg-gray-100 text-gray-500'
+                            ? 'bg-yellow-500/10 text-yellow-400'
+                            : 'bg-gray-800 text-gray-500'
                         }`}
                       >
                         {item.status}
@@ -191,32 +207,36 @@ export function SelfBuilding() {
                   ))}
                 </div>
               </div>
+
+              {/* Blur blobs */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-clay-orange/10 rounded-full blur-md" />
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-clay-teal/10 rounded-full blur-md" />
             </div>
 
             <div className="mt-6 space-y-3">
-              <h4 className="font-semibold flex items-center gap-2">
-                <Zap className="size-4 text-clay-teal" />
+              <h4 className="text-xl font-bold flex items-center gap-2">
+                <Zap className="size-5 text-clay-orange" />
                 What We Built for You
               </h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex gap-2">
-                  <span className="text-clay-teal font-bold">&bull;</span>
+                  <span className="text-clay-orange font-bold">&bull;</span>
                   Multi-step workflow engine with drag-and-drop builder
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-clay-teal font-bold">&bull;</span>
+                  <span className="text-clay-orange font-bold">&bull;</span>
                   Apify integration for any web scraping actor
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-clay-teal font-bold">&bull;</span>
+                  <span className="text-clay-orange font-bold">&bull;</span>
                   AI-powered data transformation and enrichment
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-clay-teal font-bold">&bull;</span>
+                  <span className="text-clay-orange font-bold">&bull;</span>
                   Background job processing with progress tracking
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-clay-teal font-bold">&bull;</span>
+                  <span className="text-clay-orange font-bold">&bull;</span>
                   Auto-mapping of scraped data to your contact fields
                 </li>
               </ul>
@@ -225,27 +245,5 @@ export function SelfBuilding() {
         </div>
       </div>
     </section>
-  )
-}
-
-function Component({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" />
-      <path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" />
-      <path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" />
-      <path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" />
-    </svg>
   )
 }

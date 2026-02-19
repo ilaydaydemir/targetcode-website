@@ -24,14 +24,15 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-lg border-b border-border shadow-sm'
+          ? 'bg-white shadow-sm'
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold tracking-tight">
-          <span className={scrolled ? 'text-clay-teal' : 'text-clay-teal'}>Target</span>
-          <span className={scrolled ? 'text-gray-900' : 'text-white'}>Code</span>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        {/* Logo — Roboto Mono like old site */}
+        <a href="#" className="text-2xl font-bold font-[var(--font-roboto-mono)] tracking-tight">
+          <span className={scrolled ? 'text-gray-900' : 'text-white'}>TargetCode</span>
+          <span className="text-clay-teal">.io</span>
         </a>
 
         {/* Desktop */}
@@ -40,9 +41,9 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm transition-colors ${
+              className={`text-sm font-medium transition-colors ${
                 scrolled
-                  ? 'text-muted-foreground hover:text-foreground'
+                  ? 'text-gray-700 hover:text-gray-900'
                   : 'text-gray-300 hover:text-white'
               }`}
             >
@@ -51,7 +52,7 @@ export function Navbar() {
           ))}
           <a
             href="#early-access"
-            className="rounded-lg bg-clay-teal px-5 py-2.5 text-sm font-medium text-white hover:bg-clay-teal/90 transition-colors"
+            className="px-6 py-2.5 bg-clay-teal text-white font-medium rounded-md hover:opacity-90 transition-all text-sm"
           >
             Get Early Access
           </a>
@@ -63,33 +64,37 @@ export function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
-            <X className={`size-5 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+            <X className={`size-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
           ) : (
-            <Menu className={`size-5 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+            <Menu className={`size-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
           )}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block text-sm text-muted-foreground hover:text-foreground"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#early-access"
-            className="block rounded-lg bg-clay-teal px-5 py-2.5 text-sm font-medium text-center text-white"
-            onClick={() => setMobileOpen(false)}
-          >
-            Get Early Access
-          </a>
+        <div className="md:hidden bg-white shadow-lg rounded-b-lg">
+          <div className="pt-2 pb-3 space-y-1 px-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="mt-4 space-y-2">
+              <a
+                href="#early-access"
+                className="block w-full px-6 py-3 bg-clay-teal text-white font-medium rounded-md text-center hover:opacity-90 transition-all"
+                onClick={() => setMobileOpen(false)}
+              >
+                Get Early Access
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </nav>
