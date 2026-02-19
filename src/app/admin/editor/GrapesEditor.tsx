@@ -13,122 +13,134 @@ const defaultTemplate = `
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', system-ui, sans-serif; color: #0a0a1a; }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(17,24,39,0.95); backdrop-filter: blur(8px); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+  }
+
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
   .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: 700; color: white; text-decoration: none; }
-  .nav-logo .teal { color: #38bec9; }
+  .nav-logo .accent { color: #4CAF50; }
   .nav-links { display: flex; align-items: center; gap: 32px; }
-  .nav-links a { color: #d1d5db; font-size: 14px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: white; }
-  .nav-cta { padding: 10px 24px; background: #38bec9; color: white; font-weight: 500; border-radius: 6px; text-decoration: none; font-size: 14px; transition: opacity 0.2s; }
-  .nav-cta:hover { opacity: 0.9; }
+  .nav-links a { color: #9ca3af; font-size: 14px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #FFEB3B; }
+  .nav-cta { padding: 10px 24px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 14px; transition: box-shadow 0.2s; }
+  .nav-cta:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .hero { position: relative; background: linear-gradient(to right, #111827, #1f2937); color: white; overflow: hidden; padding: 120px 0 80px; }
+  .hero { position: relative; background: rgba(0,0,0,0.75); color: white; overflow: hidden; padding: 120px 0 80px; }
   .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; text-align: center; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(56,190,201,0.3); background: rgba(56,190,201,0.1); padding: 6px 16px; border-radius: 999px; font-size: 14px; color: #38bec9; margin-bottom: 32px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(33,150,243,0.3); background: rgba(33,150,243,0.1); padding: 6px 16px; border-radius: 999px; font-size: 14px; color: #2196F3; margin-bottom: 32px; }
   .hero h1 { font-family: 'Roboto Mono', monospace; font-size: 48px; font-weight: 700; line-height: 1.2; }
-  .hero h1 .teal { color: #38bec9; }
-  .hero p { font-size: 20px; color: #d1d5db; margin-top: 24px; max-width: 768px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  .hero h1 .highlight { background: linear-gradient(to right, #FFEB3B, #4CAF50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p { font-size: 20px; color: #9ca3af; margin-top: 24px; max-width: 768px; margin-left: auto; margin-right: auto; line-height: 1.6; }
   .hero-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-  .hero-buttons .btn-primary { padding: 12px 24px; background: #38bec9; color: white; font-weight: 500; border-radius: 6px; text-decoration: none; font-size: 16px; transition: opacity 0.2s; }
-  .hero-buttons .btn-secondary { padding: 12px 24px; background: transparent; color: white; border: 1px solid white; font-weight: 500; border-radius: 6px; text-decoration: none; font-size: 16px; transition: background 0.2s; }
-  .hero-buttons .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+  .hero-buttons .btn-primary { padding: 14px 28px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; font-weight: 600; border-radius: 12px; text-decoration: none; font-size: 16px; transition: box-shadow 0.3s; }
+  .hero-buttons .btn-primary:hover { box-shadow: 0 0 30px rgba(244,67,54,0.4); }
+  .hero-buttons .btn-secondary { padding: 14px 28px; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); font-weight: 500; border-radius: 12px; text-decoration: none; font-size: 16px; transition: all 0.2s; }
+  .hero-buttons .btn-secondary:hover { border-color: #2196F3; color: #2196F3; }
   .hero-terminal { max-width: 896px; margin: 64px auto 0; }
-  .terminal { background: #030712; border-radius: 8px; overflow: hidden; border: 1px solid #374151; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-  .terminal-header { display: flex; align-items: center; padding: 12px; background: #111827; border-bottom: 1px solid #1f2937; }
+  .terminal { background: rgba(0,0,0,0.6); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+  .terminal-header { display: flex; align-items: center; padding: 12px; background: rgba(0,0,0,0.4); border-bottom: 1px solid rgba(255,255,255,0.05); }
   .terminal-dots { display: flex; gap: 8px; }
   .terminal-dots span { width: 12px; height: 12px; border-radius: 50%; }
-  .terminal-dots .red { background: #ef4444; }
-  .terminal-dots .yellow { background: #eab308; }
-  .terminal-dots .green { background: #22c55e; }
-  .terminal-title { margin-left: 16px; font-size: 12px; color: #9ca3af; font-family: 'Roboto Mono', monospace; }
-  .terminal-body { padding: 16px; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #4ade80; white-space: pre-wrap; }
-  .blob { position: absolute; border-radius: 50%; filter: blur(40px); pointer-events: none; }
-  .blob-teal { background: rgba(56,190,201,0.2); }
-  .blob-orange { background: rgba(249,115,22,0.2); }
+  .terminal-dots .red { background: #F44336; }
+  .terminal-dots .yellow { background: #FFEB3B; }
+  .terminal-dots .green { background: #4CAF50; }
+  .terminal-title { margin-left: 16px; font-size: 12px; color: #6b7280; font-family: 'Roboto Mono', monospace; }
+  .terminal-body { padding: 16px; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #4CAF50; white-space: pre-wrap; }
 
   .section { padding: 96px 0; }
-  .section-alt { background: #f9fafb; }
-  .section-white { background: white; }
+  .section-dark { background: rgba(0,0,0,0.75); }
+  .section-darker { background: rgba(0,0,0,0.80); }
   .section-inner { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
   .section-header { text-align: center; margin-bottom: 64px; }
-  .section-label { font-size: 14px; font-weight: 500; color: #38bec9; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .section-title { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
-  .section-desc { font-size: 18px; color: #64748b; max-width: 672px; margin: 0 auto; }
+  .section-label { font-size: 14px; font-weight: 500; color: #2196F3; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .section-title { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; color: white; }
+  .section-desc { font-size: 18px; color: #9ca3af; max-width: 672px; margin: 0 auto; }
 
   .features-grid { display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .features-grid { grid-template-columns: 1fr; } }
-  .feature-card { border: 1px solid #e2e8f0; background: white; border-radius: 16px; padding: 24px; transition: all 0.3s; }
-  .feature-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: rgba(56,190,201,0.2); }
-  .feature-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(56,190,201,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: #38bec9; font-size: 20px; }
-  .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-  .feature-card p { font-size: 14px; color: #64748b; line-height: 1.6; }
+  .feature-card { border: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.4); border-radius: 16px; padding: 24px; transition: all 0.3s; }
+  .feature-card:hover { border-color: rgba(33,150,243,0.3); box-shadow: 0 0 30px rgba(33,150,243,0.1); }
+  .feature-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(33,150,243,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: #FFEB3B; font-size: 20px; }
+  .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: white; }
+  .feature-card p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
 
   .steps-grid { display: grid; gap: 32px; grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .steps-grid { grid-template-columns: 1fr; } }
-  .step-icon { width: 64px; height: 64px; border-radius: 16px; background: rgba(56,190,201,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #38bec9; font-size: 28px; }
-  .step-label { font-size: 12px; font-weight: 700; color: rgba(56,190,201,0.6); letter-spacing: 0.1em; }
-  .step h3 { font-size: 18px; font-weight: 600; margin: 4px 0 8px; }
-  .step p { font-size: 14px; color: #64748b; line-height: 1.6; }
+  .step-icon { width: 64px; height: 64px; border-radius: 16px; background: rgba(33,150,243,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #FFEB3B; font-size: 28px; }
+  .step-label { font-size: 12px; font-weight: 700; color: #2196F3; letter-spacing: 0.1em; }
+  .step h3 { font-size: 18px; font-weight: 600; margin: 4px 0 8px; color: white; }
+  .step p { font-size: 14px; color: #9ca3af; line-height: 1.6; }
 
   .two-col { display: grid; gap: 48px; grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 1024px) { .two-col { grid-template-columns: 1fr; } }
 
   .pricing-grid { display: grid; gap: 32px; grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr; } }
-  .price-card { border: 1px solid #e2e8f0; background: white; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; }
-  .price-card.highlighted { border-color: #38bec9; box-shadow: 0 0 60px rgba(56,190,201,0.15); position: relative; }
-  .price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #38bec9; color: white; font-size: 12px; font-weight: 500; padding: 4px 16px; border-radius: 999px; }
-  .price-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
-  .price-card .desc { font-size: 14px; color: #64748b; margin-bottom: 16px; }
-  .price-amount { font-size: 40px; font-weight: 700; }
-  .price-period { font-size: 16px; color: #64748b; }
+  .price-card { border: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.4); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; }
+  .price-card.highlighted { border-color: #4CAF50; box-shadow: 0 0 60px rgba(76,175,80,0.15); position: relative; }
+  .price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #4CAF50, #2196F3); color: white; font-size: 12px; font-weight: 500; padding: 4px 16px; border-radius: 999px; }
+  .price-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; color: white; }
+  .price-card .desc { font-size: 14px; color: #9ca3af; margin-bottom: 16px; }
+  .price-amount { font-size: 40px; font-weight: 700; color: white; }
+  .price-period { font-size: 16px; color: #6b7280; }
   .price-features { list-style: none; padding: 0; margin: 24px 0; flex: 1; }
-  .price-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; margin-bottom: 12px; }
-  .price-features li::before { content: "\\2713"; color: #38bec9; font-weight: 700; flex-shrink: 0; }
+  .price-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; margin-bottom: 12px; color: #d1d5db; }
+  .price-features li::before { content: "\\2713"; color: #4CAF50; font-weight: 700; flex-shrink: 0; }
   .price-cta { display: block; text-align: center; padding: 12px; border-radius: 12px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; }
-  .price-cta.primary { background: #38bec9; color: white; }
-  .price-cta.primary:hover { opacity: 0.9; }
-  .price-cta.secondary { border: 1px solid #e2e8f0; color: #0a0a1a; }
-  .price-cta.secondary:hover { background: #f1f5f9; }
+  .price-cta.primary { background: linear-gradient(to right, #4CAF50, #2196F3); color: white; }
+  .price-cta.primary:hover { box-shadow: 0 0 20px rgba(76,175,80,0.3); }
+  .price-cta.secondary { border: 1px solid rgba(255,255,255,0.1); color: #d1d5db; }
+  .price-cta.secondary:hover { border-color: #FFEB3B; color: #FFEB3B; }
 
-  .cta-section { padding: 96px 0; background: #f9fafb; }
+  .cta-section { padding: 96px 0; background: rgba(0,0,0,0.70); }
   .cta-inner { max-width: 768px; margin: 0 auto; padding: 0 24px; text-align: center; }
-  .cta-inner h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
-  .cta-inner p { font-size: 18px; color: #64748b; margin-bottom: 40px; }
+  .cta-inner h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: white; }
+  .cta-inner p { font-size: 18px; color: #9ca3af; margin-bottom: 40px; }
   .cta-form { display: flex; gap: 12px; max-width: 448px; margin: 0 auto; flex-wrap: wrap; }
-  .cta-form input { flex: 1; min-width: 200px; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 14px; outline: none; transition: border-color 0.2s; }
-  .cta-form input:focus { border-color: #38bec9; box-shadow: 0 0 0 3px rgba(56,190,201,0.2); }
-  .cta-form button { padding: 14px 32px; background: #38bec9; color: white; border: none; border-radius: 12px; font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity 0.2s; }
-  .cta-form button:hover { opacity: 0.9; }
+  .cta-form input { flex: 1; min-width: 200px; padding: 14px 20px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.4); color: white; border-radius: 12px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .cta-form input::placeholder { color: #6b7280; }
+  .cta-form input:focus { border-color: #2196F3; box-shadow: 0 0 0 3px rgba(33,150,243,0.2); }
+  .cta-form button { padding: 14px 32px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: box-shadow 0.2s; }
+  .cta-form button:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .footer { background: #111827; color: white; padding: 48px 0; }
+  .footer { background: rgba(0,0,0,0.90); color: white; padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.05); }
   .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
   @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
   .footer-logo { font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: 700; }
-  .footer-logo .teal { color: #38bec9; }
-  .footer-desc { color: #9ca3af; margin-top: 16px; max-width: 384px; font-size: 14px; }
+  .footer-logo .accent { color: #4CAF50; }
+  .footer-desc { color: #6b7280; margin-top: 16px; max-width: 384px; font-size: 14px; }
   .footer-social { display: flex; gap: 24px; margin-top: 24px; }
-  .footer-social a { color: #9ca3af; transition: color 0.2s; }
-  .footer-social a:hover { color: #38bec9; }
-  .footer h4 { font-size: 14px; font-weight: 600; color: #d1d5db; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+  .footer-social a { color: #6b7280; transition: color 0.2s; }
+  .footer-social a:hover { color: #FFEB3B; }
+  .footer h4 { font-size: 14px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
   .footer ul { list-style: none; padding: 0; }
   .footer ul li { margin-bottom: 12px; }
-  .footer ul a { color: #9ca3af; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-  .footer ul a:hover { color: white; }
-  .footer-bottom { margin-top: 48px; padding-top: 32px; border-top: 1px solid #1f2937; color: #9ca3af; font-size: 14px; }
+  .footer ul a { color: #6b7280; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  .footer ul a:hover { color: #FFEB3B; }
+  .footer-bottom { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); color: #4b5563; font-size: 14px; }
 </style>
 
 <!-- NAVBAR -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">TargetCode<span class="teal">.io</span></a>
+    <a href="#" class="nav-logo">TargetCode<span class="accent">.io</span></a>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#how-it-works">How It Works</a>
@@ -141,11 +153,9 @@ const defaultTemplate = `
 
 <!-- HERO -->
 <section class="hero">
-  <div class="blob blob-teal" style="width:96px;height:96px;top:-48px;right:-48px;"></div>
-  <div class="blob blob-orange" style="width:64px;height:64px;bottom:-32px;left:-32px;"></div>
   <div class="hero-inner">
     <div class="hero-badge">AI-Powered GTM Engine</div>
-    <h1>Outbound is static.<br><span class="teal">Your GTM engine is dynamic.</span></h1>
+    <h1>Outbound is static.<br><span class="highlight">Your GTM engine is dynamic.</span></h1>
     <p>TargetCode ships with a fully customizable sales app out of the box. Tell it what you need — it writes the code, builds the scrapers, and evolves with every interaction.</p>
     <div class="hero-buttons">
       <a href="#early-access" class="btn-primary">Get Early Access</a>
@@ -181,9 +191,7 @@ const targetCode = {
 </section>
 
 <!-- FEATURES -->
-<section id="features" class="section section-white" style="position:relative;overflow:hidden;">
-  <div class="blob blob-teal" style="width:160px;height:160px;top:-40px;right:-40px;opacity:0.3;"></div>
-  <div class="blob blob-orange" style="width:96px;height:96px;bottom:-32px;left:-32px;opacity:0.3;"></div>
+<section id="features" class="section section-dark">
   <div class="section-inner">
     <div class="section-header">
       <p class="section-label">EVERYTHING INCLUDED</p>
@@ -236,7 +244,7 @@ const targetCode = {
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how-it-works" class="section section-alt">
+<section id="how-it-works" class="section section-darker">
   <div class="section-inner">
     <div class="section-header">
       <p class="section-label">HOW IT WORKS</p>
@@ -273,9 +281,7 @@ const targetCode = {
 </section>
 
 <!-- SELF-BUILDING -->
-<section id="self-building" class="section section-white" style="position:relative;overflow:hidden;">
-  <div class="blob blob-teal" style="width:160px;height:160px;top:-40px;right:-40px;opacity:0.3;"></div>
-  <div class="blob blob-orange" style="width:96px;height:96px;bottom:-32px;left:-32px;opacity:0.3;"></div>
+<section id="self-building" class="section section-dark">
   <div class="section-inner">
     <div class="section-header">
       <p class="section-label">THE MAGIC</p>
@@ -290,20 +296,20 @@ const targetCode = {
             <div class="terminal-title">vibe-builder.tsx</div>
           </div>
           <div style="padding:16px;">
-            <div style="margin-left:32px;background:rgba(56,190,201,0.1);border-radius:8px;padding:10px 16px;color:white;font-size:14px;margin-bottom:12px;">Build me a pipeline dashboard widget that shows conversion rates by stage with a bar chart</div>
-            <div style="margin-right:32px;background:#1f2937;border-radius:8px;padding:10px 16px;color:#d1d5db;font-size:14px;">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="color:#38bec9;font-size:12px;font-weight:500;">AI</span></div>
+            <div style="margin-left:32px;background:rgba(33,150,243,0.1);border-radius:8px;padding:10px 16px;color:white;font-size:14px;margin-bottom:12px;">Build me a pipeline dashboard widget that shows conversion rates by stage with a bar chart</div>
+            <div style="margin-right:32px;background:rgba(0,0,0,0.3);border-radius:8px;padding:10px 16px;color:#d1d5db;font-size:14px;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="color:#2196F3;font-size:12px;font-weight:500;">AI</span></div>
               I've generated a PipelineDashboard component with interactive bar charts, stage labels, and conversion percentages. Here's the live preview →
             </div>
           </div>
         </div>
         <div style="margin-top:24px;">
-          <h4 style="font-size:20px;font-weight:700;margin-bottom:12px;">How Vibe Works</h4>
-          <ol style="list-style:none;padding:0;font-size:14px;color:#4b5563;line-height:2;">
-            <li><span style="color:#38bec9;font-weight:700;">1.</span> Describe any widget, page, or workflow step in plain English</li>
-            <li><span style="color:#38bec9;font-weight:700;">2.</span> AI generates production-ready React/TSX code instantly</li>
-            <li><span style="color:#38bec9;font-weight:700;">3.</span> Preview it live in a sandboxed environment</li>
-            <li><span style="color:#38bec9;font-weight:700;">4.</span> Save to your component library with versioning</li>
+          <h4 style="font-size:20px;font-weight:700;margin-bottom:12px;color:white;">How Vibe Works</h4>
+          <ol style="list-style:none;padding:0;font-size:14px;color:#9ca3af;line-height:2;">
+            <li><span style="color:#FFEB3B;font-weight:700;">1.</span> Describe any widget, page, or workflow step in plain English</li>
+            <li><span style="color:#FFEB3B;font-weight:700;">2.</span> AI generates production-ready React/TSX code instantly</li>
+            <li><span style="color:#FFEB3B;font-weight:700;">3.</span> Preview it live in a sandboxed environment</li>
+            <li><span style="color:#FFEB3B;font-weight:700;">4.</span> Save to your component library with versioning</li>
           </ol>
         </div>
       </div>
@@ -312,39 +318,39 @@ const targetCode = {
           <div class="terminal-header">
             <div class="terminal-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
             <div class="terminal-title">workflow-engine.ts</div>
-            <span style="margin-left:auto;font-size:12px;background:rgba(34,197,94,0.2);color:#4ade80;border-radius:999px;padding:2px 10px;font-weight:500;">Running</span>
+            <span style="margin-left:auto;font-size:12px;background:rgba(76,175,80,0.2);color:#4CAF50;border-radius:999px;padding:2px 10px;font-weight:500;">Running</span>
           </div>
           <div style="padding:16px;display:flex;flex-direction:column;gap:12px;">
-            <div style="display:flex;align-items:center;gap:12px;border:1px solid #374151;background:#111827;border-radius:8px;padding:12px 16px;">
-              <div style="width:8px;height:8px;border-radius:50%;background:#22c55e;"></div>
-              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Apify Scraper</p><p style="font-size:12px;color:#9ca3af;margin:0;">Scrape LinkedIn Sales Navigator</p></div>
-              <span style="font-size:12px;background:rgba(34,197,94,0.1);color:#4ade80;border-radius:999px;padding:2px 8px;">completed</span>
+            <div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.3);border-radius:8px;padding:12px 16px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#4CAF50;"></div>
+              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Apify Scraper</p><p style="font-size:12px;color:#6b7280;margin:0;">Scrape LinkedIn Sales Navigator</p></div>
+              <span style="font-size:12px;background:rgba(76,175,80,0.1);color:#4CAF50;border-radius:999px;padding:2px 8px;">completed</span>
             </div>
-            <div style="display:flex;align-items:center;gap:12px;border:1px solid #374151;background:#111827;border-radius:8px;padding:12px 16px;">
-              <div style="width:8px;height:8px;border-radius:50%;background:#22c55e;"></div>
-              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">AI Transform</p><p style="font-size:12px;color:#9ca3af;margin:0;">Enrich &amp; normalize contact data</p></div>
-              <span style="font-size:12px;background:rgba(34,197,94,0.1);color:#4ade80;border-radius:999px;padding:2px 8px;">completed</span>
+            <div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.3);border-radius:8px;padding:12px 16px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#4CAF50;"></div>
+              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">AI Transform</p><p style="font-size:12px;color:#6b7280;margin:0;">Enrich &amp; normalize contact data</p></div>
+              <span style="font-size:12px;background:rgba(76,175,80,0.1);color:#4CAF50;border-radius:999px;padding:2px 8px;">completed</span>
             </div>
-            <div style="display:flex;align-items:center;gap:12px;border:1px solid #374151;background:#111827;border-radius:8px;padding:12px 16px;">
-              <div style="width:8px;height:8px;border-radius:50%;background:#eab308;"></div>
-              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Filter</p><p style="font-size:12px;color:#9ca3af;margin:0;">Match ICP criteria (SaaS, 50-200 employees)</p></div>
-              <span style="font-size:12px;background:rgba(234,179,8,0.1);color:#facc15;border-radius:999px;padding:2px 8px;">running</span>
+            <div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.3);border-radius:8px;padding:12px 16px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#FFEB3B;"></div>
+              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Filter</p><p style="font-size:12px;color:#6b7280;margin:0;">Match ICP criteria (SaaS, 50-200 employees)</p></div>
+              <span style="font-size:12px;background:rgba(255,235,59,0.1);color:#FFEB3B;border-radius:999px;padding:2px 8px;">running</span>
             </div>
-            <div style="display:flex;align-items:center;gap:12px;border:1px solid #374151;background:#111827;border-radius:8px;padding:12px 16px;">
+            <div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.3);border-radius:8px;padding:12px 16px;">
               <div style="width:8px;height:8px;border-radius:50%;background:#4b5563;"></div>
-              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Save Contacts</p><p style="font-size:12px;color:#9ca3af;margin:0;">Import qualified leads to CRM</p></div>
+              <div style="flex:1;"><p style="font-size:14px;font-weight:500;color:white;margin:0;">Save Contacts</p><p style="font-size:12px;color:#6b7280;margin:0;">Import qualified leads to CRM</p></div>
               <span style="font-size:12px;background:rgba(75,85,99,0.3);color:#6b7280;border-radius:999px;padding:2px 8px;">pending</span>
             </div>
           </div>
         </div>
         <div style="margin-top:24px;">
-          <h4 style="font-size:20px;font-weight:700;margin-bottom:12px;">What We Built for You</h4>
-          <ul style="list-style:none;padding:0;font-size:14px;color:#4b5563;line-height:2;">
-            <li><span style="color:#f97316;font-weight:700;">•</span> Multi-step workflow engine with drag-and-drop builder</li>
-            <li><span style="color:#f97316;font-weight:700;">•</span> Apify integration for any web scraping actor</li>
-            <li><span style="color:#f97316;font-weight:700;">•</span> AI-powered data transformation and enrichment</li>
-            <li><span style="color:#f97316;font-weight:700;">•</span> Background job processing with progress tracking</li>
-            <li><span style="color:#f97316;font-weight:700;">•</span> Auto-mapping of scraped data to your contact fields</li>
+          <h4 style="font-size:20px;font-weight:700;margin-bottom:12px;color:white;">What We Built for You</h4>
+          <ul style="list-style:none;padding:0;font-size:14px;color:#9ca3af;line-height:2;">
+            <li><span style="color:#F44336;font-weight:700;">•</span> Multi-step workflow engine with drag-and-drop builder</li>
+            <li><span style="color:#F44336;font-weight:700;">•</span> Apify integration for any web scraping actor</li>
+            <li><span style="color:#F44336;font-weight:700;">•</span> AI-powered data transformation and enrichment</li>
+            <li><span style="color:#F44336;font-weight:700;">•</span> Background job processing with progress tracking</li>
+            <li><span style="color:#F44336;font-weight:700;">•</span> Auto-mapping of scraped data to your contact fields</li>
           </ul>
         </div>
       </div>
@@ -353,7 +359,7 @@ const targetCode = {
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="section section-alt">
+<section id="pricing" class="section section-darker">
   <div class="section-inner">
     <div class="section-header">
       <p class="section-label">PRICING</p>
@@ -426,7 +432,7 @@ const targetCode = {
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">TargetCode<span class="teal">.io</span></div>
+        <div class="footer-logo">TargetCode<span class="accent">.io</span></div>
         <p class="footer-desc">Self-evolving GTM engine for modern sales teams. We don't just outbound — we build.</p>
         <div class="footer-social">
           <a href="#">
@@ -571,7 +577,7 @@ export default function GrapesEditor() {
               fontSize: 16,
             }}
           >
-            TargetCode<span style={{ color: '#38bec9' }}>.io</span>
+            TargetCode<span style={{ color: '#4CAF50' }}>.io</span>
           </span>
           <span style={{ color: '#64748b', fontSize: 13 }}>Editor</span>
         </div>
@@ -602,7 +608,7 @@ export default function GrapesEditor() {
             disabled={publishing}
             style={{
               padding: '6px 16px',
-              background: '#38bec9',
+              background: 'linear-gradient(to right, #4CAF50, #2196F3)',
               color: 'white',
               border: 'none',
               borderRadius: 6,
