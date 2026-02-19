@@ -9,15 +9,30 @@ export function EarlyAccess() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
+  const [error, setError] = useState('')
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim()) return
 
     setLoading(true)
-    // Simulate submission — replace with actual API call later
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setSubmitted(true)
-    setLoading(false)
+    setError('')
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      })
+
+      if (!res.ok) throw new Error('Failed to submit')
+
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -76,6 +91,9 @@ export function EarlyAccess() {
                 )}
               </button>
             </form>
+          )}
+          {error && (
+            <p className="mt-3 text-sm text-red-500">{error}</p>
           )}
         </motion.div>
       </div>
