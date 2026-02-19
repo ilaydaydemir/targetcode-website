@@ -15,7 +15,9 @@ const defaultTemplate = `
 
   @keyframes gradientShift {
     0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
     100% { background-position: 0% 50%; }
   }
 
@@ -23,13 +25,14 @@ const defaultTemplate = `
   body {
     font-family: 'Inter', system-ui, sans-serif;
     color: #ffffff;
-    background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: linear-gradient(-45deg, #F44336, #FFEB3B, #4CAF50, #2196F3, #F44336, #FFEB3B);
+    background-size: 600% 600%;
+    animation: gradientShift 20s ease infinite;
     min-height: 100vh;
   }
+  h1, h2, h3, h4, p, span, li, a, label, button { text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.30); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
   .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: 700; color: white; text-decoration: none; }
   .nav-logo .accent { color: #4CAF50; }
@@ -39,7 +42,7 @@ const defaultTemplate = `
   .nav-cta { padding: 10px 24px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 14px; transition: box-shadow 0.2s; }
   .nav-cta:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .hero { position: relative; background: rgba(0,0,0,0.75); color: white; overflow: hidden; padding: 120px 0 80px; }
+  .hero { position: relative; background: rgba(0,0,0,0.20); color: white; overflow: hidden; padding: 120px 0 80px; }
   .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; text-align: center; }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(33,150,243,0.3); background: rgba(33,150,243,0.1); padding: 6px 16px; border-radius: 999px; font-size: 14px; color: #2196F3; margin-bottom: 32px; }
   .hero h1 { font-family: 'Roboto Mono', monospace; font-size: 48px; font-weight: 700; line-height: 1.2; }
@@ -62,8 +65,8 @@ const defaultTemplate = `
   .terminal-body { padding: 16px; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #4CAF50; white-space: pre-wrap; }
 
   .section { padding: 96px 0; }
-  .section-dark { background: rgba(0,0,0,0.75); }
-  .section-darker { background: rgba(0,0,0,0.80); }
+  .section-dark { background: rgba(0,0,0,0.20); }
+  .section-darker { background: rgba(0,0,0,0.15); }
   .section-inner { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
   .section-header { text-align: center; margin-bottom: 64px; }
   .section-label { font-size: 14px; font-weight: 500; color: #2196F3; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -108,7 +111,7 @@ const defaultTemplate = `
   .price-cta.secondary { border: 1px solid rgba(255,255,255,0.1); color: #d1d5db; }
   .price-cta.secondary:hover { border-color: #FFEB3B; color: #FFEB3B; }
 
-  .cta-section { padding: 96px 0; background: rgba(0,0,0,0.70); }
+  .cta-section { padding: 96px 0; background: rgba(0,0,0,0.15); }
   .cta-inner { max-width: 768px; margin: 0 auto; padding: 0 24px; text-align: center; }
   .cta-inner h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: white; }
   .cta-inner p { font-size: 18px; color: #9ca3af; margin-bottom: 40px; }
@@ -119,7 +122,7 @@ const defaultTemplate = `
   .cta-form button { padding: 14px 32px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: box-shadow 0.2s; }
   .cta-form button:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .footer { background: rgba(0,0,0,0.90); color: white; padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+  .footer { background: rgba(0,0,0,0.25); color: white; padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.1); }
   .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
   @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }

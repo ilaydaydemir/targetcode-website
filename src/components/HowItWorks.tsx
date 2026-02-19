@@ -40,7 +40,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-black/45">
+    <section id="how-it-works" className="py-24 bg-black/15">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <motion.p

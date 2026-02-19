@@ -24,7 +24,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/60 backdrop-blur-md shadow-lg shadow-black/20'
+          ? 'bg-black/30 backdrop-blur-md shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
     >
@@ -65,7 +65,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-black/60 backdrop-blur-md border-t border-[#2a2a3e]">
+        <div className="md:hidden bg-black/30 backdrop-blur-md border-t border-[#2a2a3e]">
           <div className="pt-2 pb-3 space-y-1 px-4">
             {navLinks.map((link) => (
               <a

@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-black/40">
+    <section className="relative overflow-hidden bg-black/20">
 
       {/* Floating color blobs */}
       <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#2196F3]/15 rounded-full blur-3xl animate-float" />

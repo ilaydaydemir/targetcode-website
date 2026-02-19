@@ -5,7 +5,7 @@ import { Bot, Eye, Save, Zap } from 'lucide-react'
 
 export function SelfBuilding() {
   return (
-    <section id="self-building" className="relative py-24 overflow-hidden bg-black/50">
+    <section id="self-building" className="relative py-24 overflow-hidden bg-black/20">
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-[#4CAF50]/5 rounded-full blur-2xl" />
       <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-24 h-24 bg-[#F44336]/5 rounded-full blur-2xl" />
 

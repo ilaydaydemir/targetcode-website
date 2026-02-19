@@ -34,7 +34,7 @@ export function EarlyAccess() {
   }
 
   return (
-    <section id="early-access" className="relative py-24 overflow-hidden bg-black/40">
+    <section id="early-access" className="relative py-24 overflow-hidden bg-black/15">
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <motion.div
