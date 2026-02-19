@@ -15,9 +15,7 @@ const defaultTemplate = `
 
   @keyframes gradientShift {
     0% { background-position: 0% 50%; }
-    25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
-    75% { background-position: 50% 0%; }
     100% { background-position: 0% 50%; }
   }
 
@@ -25,14 +23,13 @@ const defaultTemplate = `
   body {
     font-family: 'Inter', system-ui, sans-serif;
     color: #ffffff;
-    background: linear-gradient(-45deg, #F44336, #FFEB3B, #4CAF50, #2196F3, #F44336, #FFEB3B);
-    background-size: 600% 600%;
-    animation: gradientShift 20s ease infinite;
+    background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     min-height: 100vh;
   }
-  h1, h2, h3, h4, p, span, li, a, label, button { text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
 
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.30); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
   .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
   .nav-logo { font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: 700; color: white; text-decoration: none; }
   .nav-logo .accent { color: #4CAF50; }
@@ -42,7 +39,7 @@ const defaultTemplate = `
   .nav-cta { padding: 10px 24px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 14px; transition: box-shadow 0.2s; }
   .nav-cta:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .hero { position: relative; background: rgba(0,0,0,0.20); color: white; overflow: hidden; padding: 120px 0 80px; }
+  .hero { position: relative; background: rgba(0,0,0,0.75); color: white; overflow: hidden; padding: 120px 0 80px; }
   .hero-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; text-align: center; }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(33,150,243,0.3); background: rgba(33,150,243,0.1); padding: 6px 16px; border-radius: 999px; font-size: 14px; color: #2196F3; margin-bottom: 32px; }
   .hero h1 { font-family: 'Roboto Mono', monospace; font-size: 48px; font-weight: 700; line-height: 1.2; }
@@ -65,8 +62,8 @@ const defaultTemplate = `
   .terminal-body { padding: 16px; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #4CAF50; white-space: pre-wrap; }
 
   .section { padding: 96px 0; }
-  .section-dark { background: rgba(0,0,0,0.20); }
-  .section-darker { background: rgba(0,0,0,0.15); }
+  .section-dark { background: rgba(0,0,0,0.75); }
+  .section-darker { background: rgba(0,0,0,0.80); }
   .section-inner { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
   .section-header { text-align: center; margin-bottom: 64px; }
   .section-label { font-size: 14px; font-weight: 500; color: #2196F3; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -111,7 +108,7 @@ const defaultTemplate = `
   .price-cta.secondary { border: 1px solid rgba(255,255,255,0.1); color: #d1d5db; }
   .price-cta.secondary:hover { border-color: #FFEB3B; color: #FFEB3B; }
 
-  .cta-section { padding: 96px 0; background: rgba(0,0,0,0.15); }
+  .cta-section { padding: 96px 0; background: rgba(0,0,0,0.70); }
   .cta-inner { max-width: 768px; margin: 0 auto; padding: 0 24px; text-align: center; }
   .cta-inner h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: white; }
   .cta-inner p { font-size: 18px; color: #9ca3af; margin-bottom: 40px; }
@@ -122,7 +119,7 @@ const defaultTemplate = `
   .cta-form button { padding: 14px 32px; background: linear-gradient(to right, #F44336, #FFEB3B); color: #0A0A0A; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: box-shadow 0.2s; }
   .cta-form button:hover { box-shadow: 0 0 20px rgba(244,67,54,0.3); }
 
-  .footer { background: rgba(0,0,0,0.25); color: white; padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .footer { background: rgba(0,0,0,0.90); color: white; padding: 48px 0; border-top: 1px solid rgba(255,255,255,0.05); }
   .footer-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
   @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
@@ -149,7 +146,7 @@ const defaultTemplate = `
       <a href="#how-it-works">How It Works</a>
       <a href="#self-building">Self-Building</a>
       <a href="#pricing">Pricing</a>
-      <a href="#early-access" class="nav-cta">Get Early Access</a>
+      <a href="#inquiry" class="nav-cta">Book a Call</a>
     </div>
   </div>
 </nav>
@@ -161,8 +158,34 @@ const defaultTemplate = `
     <h1>Outbound is static.<br><span class="highlight">Your GTM engine is dynamic.</span></h1>
     <p>TargetCode ships with a fully customizable sales app out of the box. Tell it what you need — it writes the code, builds the scrapers, and evolves with every interaction.</p>
     <div class="hero-buttons">
-      <a href="#early-access" class="btn-primary">Fill Out the Form for Your Custom GTM System</a>
+      <a href="#inquiry" class="btn-primary">Book a Sales Call</a>
       <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+          <div class="terminal-title">app.targetcode.io/engine</div>
+        </div>
+        <div class="terminal-body">// Self-Evolving GTM Engine
+const targetCode = {
+  buyer: {
+    company: "Acme Corp",
+    signals: ["raised $5M Series A", "hiring VP Marketing"],
+    persona: "Marketing Leader"
+  },
+
+  async buildWorkflow() {
+    const leads = await this.scraper.findByICP(this.buyer);
+    const enriched = await this.ai.enrich(leads);
+    return this.deploy(enriched);  // Auto-generated pipeline
+  },
+
+  vibeComponent(prompt) {
+    return this.ai.generateReact(prompt);  // Builds its own UI
+  }
+}</div>
+      </div>
     </div>
   </div>
 </section>
@@ -355,7 +378,7 @@ const defaultTemplate = `
           <li>Basic scraper access</li>
           <li>Component builder (5 saves)</li>
         </ul>
-        <a href="#early-access" class="price-cta secondary">Start Free</a>
+        <a href="#inquiry" class="price-cta secondary">Start Free</a>
       </div>
       <div class="price-card highlighted">
         <div class="price-badge">Most Popular</div>
@@ -372,7 +395,7 @@ const defaultTemplate = `
           <li>Webhook &amp; API sources</li>
           <li>Priority support</li>
         </ul>
-        <a href="#early-access" class="price-cta primary">Get Early Access</a>
+        <a href="#inquiry" class="price-cta primary">Book a Call</a>
       </div>
       <div class="price-card">
         <h3>Enterprise</h3>
@@ -386,20 +409,21 @@ const defaultTemplate = `
           <li>Custom AI training</li>
           <li>SLA &amp; dedicated support</li>
         </ul>
-        <a href="#early-access" class="price-cta secondary">Contact Sales</a>
+        <a href="#inquiry" class="price-cta secondary">Contact Sales</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EARLY ACCESS / CTA -->
-<section id="early-access" class="cta-section">
+<!-- INQUIRY / CTA -->
+<section id="inquiry" class="cta-section">
   <div class="cta-inner">
-    <h2>Ready to Transform Your Sales Pipeline?</h2>
-    <p>Join the waitlist for early access. Be the first to experience a GTM engine that evolves with your business.</p>
-    <form class="cta-form" data-gjs-type="form" action="/api/waitlist" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Join Waitlist</button>
+    <h2>Get Your Custom GTM System</h2>
+    <p>Book a sales call to learn how TargetCode can build a self-evolving GTM engine tailored to your business.</p>
+    <form class="cta-form" data-gjs-type="form" action="/api/inquiry" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Work email" required />
+      <button type="submit">Book a Sales Call</button>
     </form>
   </div>
 </section>
@@ -453,32 +477,6 @@ export default function GrapesEditor() {
 
   const onEditor = useCallback(async (editor: Editor) => {
     editorRef.current = editor
-
-    // Custom upload handler — GrapeJS built-in uploader doesn't send cookies
-    editor.AssetManager.getConfig().uploadFile = async (e: DragEvent | Event) => {
-      const input = e as Event & { dataTransfer?: DataTransfer; target?: HTMLInputElement }
-      const files = input.dataTransfer?.files || (input.target as HTMLInputElement)?.files
-      if (!files || files.length === 0) return
-
-      const formData = new FormData()
-      for (let i = 0; i < files.length; i++) {
-        formData.append('files[]', files[i])
-      }
-
-      try {
-        const res = await fetch('/api/cms/upload', {
-          method: 'POST',
-          body: formData,
-          credentials: 'include',
-        })
-        const result = await res.json()
-        if (result.data) {
-          editor.AssetManager.add(result.data.map((src: string) => ({ src })))
-        }
-      } catch (err) {
-        console.error('Upload failed:', err)
-      }
-    }
 
     // Try to load existing draft
     try {

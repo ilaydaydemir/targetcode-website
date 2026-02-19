@@ -52,10 +52,10 @@ export function Hero() {
           className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
         >
           <a
-            href="#early-access"
+            href="#inquiry"
             className="group px-6 py-3 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(244,67,54,0.4)] transition-all flex items-center justify-center gap-2"
           >
-            Get Early Access
+            Book a Sales Call
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a

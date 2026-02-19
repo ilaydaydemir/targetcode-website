@@ -45,10 +45,10 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#early-access"
+            href="#inquiry"
             className="px-6 py-2.5 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all text-sm"
           >
-            Get Early Access
+            Book a Call
           </a>
         </div>
 
@@ -79,11 +79,11 @@ export function Navbar() {
             ))}
             <div className="mt-4 space-y-2">
               <a
-                href="#early-access"
+                href="#inquiry"
                 className="block w-full px-6 py-3 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl text-center hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all"
                 onClick={() => setMobileOpen(false)}
               >
-                Get Early Access
+                Book a Call
               </a>
             </div>
           </div>

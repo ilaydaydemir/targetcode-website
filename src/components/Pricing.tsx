@@ -34,7 +34,7 @@ const plans = [
       'Webhook & API sources',
       'Priority support',
     ],
-    cta: 'Get Early Access',
+    cta: 'Book a Call',
     highlighted: true,
   },
   {
@@ -124,7 +124,7 @@ export function Pricing() {
                 ))}
               </ul>
               <a
-                href="#early-access"
+                href="#inquiry"
                 className={`block rounded-xl py-3 text-sm font-medium text-center transition-all ${
                   plan.highlighted
                     ? 'bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white hover:shadow-[0_0_20px_rgba(76,175,80,0.3)]'
