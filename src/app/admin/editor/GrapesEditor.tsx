@@ -158,34 +158,8 @@ const defaultTemplate = `
     <h1>Outbound is static.<br><span class="highlight">Your GTM engine is dynamic.</span></h1>
     <p>TargetCode ships with a fully customizable sales app out of the box. Tell it what you need — it writes the code, builds the scrapers, and evolves with every interaction.</p>
     <div class="hero-buttons">
-      <a href="#early-access" class="btn-primary">Get Early Access</a>
+      <a href="#early-access" class="btn-primary">Fill Out the Form for Your Custom GTM System</a>
       <a href="#how-it-works" class="btn-secondary">See How It Works</a>
-    </div>
-    <div class="hero-terminal">
-      <div class="terminal">
-        <div class="terminal-header">
-          <div class="terminal-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-          <div class="terminal-title">app.targetcode.io/engine</div>
-        </div>
-        <div class="terminal-body">// Self-Evolving GTM Engine
-const targetCode = {
-  buyer: {
-    company: "Acme Corp",
-    signals: ["raised $5M Series A", "hiring VP Marketing"],
-    persona: "Marketing Leader"
-  },
-
-  async buildWorkflow() {
-    const leads = await this.scraper.findByICP(this.buyer);
-    const enriched = await this.ai.enrich(leads);
-    return this.deploy(enriched);  // Auto-generated pipeline
-  },
-
-  vibeComponent(prompt) {
-    return this.ai.generateReact(prompt);  // Builds its own UI
-  }
-}</div>
-      </div>
     </div>
   </div>
 </section>
