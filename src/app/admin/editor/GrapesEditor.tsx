@@ -1,8 +1,12 @@
 'use client'
 
 import { useState, useCallback, useRef } from 'react'
+import grapesjs, { type Editor } from 'grapesjs'
 import GjsEditor, { Canvas } from '@grapesjs/react'
-import type { Editor } from 'grapesjs'
+import gjsPresetWebpage from 'grapesjs-preset-webpage'
+import gjsBlocksBasic from 'grapesjs-blocks-basic'
+import gjsPluginForms from 'grapesjs-plugin-forms'
+import gjsStyleBg from 'grapesjs-style-bg'
 import 'grapesjs/dist/css/grapes.min.css'
 
 const defaultTemplate = `
@@ -630,25 +634,25 @@ export default function GrapesEditor() {
       {/* GrapeJS Editor */}
       <div style={{ flex: 1, overflow: 'hidden' }}>
         <GjsEditor
-          grapesjs="https://unpkg.com/grapesjs"
+          grapesjs={grapesjs}
           options={{
             height: '100%',
             storageManager: false,
             undoManager: { trackSelection: false },
             selectorManager: { componentFirst: true },
             plugins: [
-              'grapesjs-preset-webpage',
-              'grapesjs-blocks-basic',
-              'grapesjs-plugin-forms',
-              'grapesjs-style-bg',
+              gjsPresetWebpage,
+              gjsBlocksBasic,
+              gjsPluginForms,
+              gjsStyleBg,
             ],
             pluginsOpts: {
-              'grapesjs-preset-webpage': {
+              [gjsPresetWebpage as unknown as string]: {
                 blocksBasicOpts: { flexGrid: true },
                 navbarOpts: false,
                 countdownOpts: false,
               },
-              'grapesjs-blocks-basic': {
+              [gjsBlocksBasic as unknown as string]: {
                 flexGrid: true,
               },
             },
