@@ -454,6 +454,32 @@ export default function GrapesEditor() {
   const onEditor = useCallback(async (editor: Editor) => {
     editorRef.current = editor
 
+    // Custom upload handler — GrapeJS built-in uploader doesn't send cookies
+    editor.AssetManager.getConfig().uploadFile = async (e: DragEvent | Event) => {
+      const input = e as Event & { dataTransfer?: DataTransfer; target?: HTMLInputElement }
+      const files = input.dataTransfer?.files || (input.target as HTMLInputElement)?.files
+      if (!files || files.length === 0) return
+
+      const formData = new FormData()
+      for (let i = 0; i < files.length; i++) {
+        formData.append('files[]', files[i])
+      }
+
+      try {
+        const res = await fetch('/api/cms/upload', {
+          method: 'POST',
+          body: formData,
+          credentials: 'include',
+        })
+        const result = await res.json()
+        if (result.data) {
+          editor.AssetManager.add(result.data.map((src: string) => ({ src })))
+        }
+      } catch (err) {
+        console.error('Upload failed:', err)
+      }
+    }
+
     // Try to load existing draft
     try {
       const res = await fetch('/api/cms/load?type=draft')
