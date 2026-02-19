@@ -1,7 +1,20 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // No output: 'standalone' — needed for ISR + on-demand revalidation
+  async redirects() {
+    return [
+      {
+        source: '/edit',
+        destination: '/admin/editor',
+        permanent: false,
+      },
+      {
+        source: '/login',
+        destination: '/admin/login',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 export default nextConfig
