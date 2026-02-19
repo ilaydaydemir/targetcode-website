@@ -46,6 +46,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   } catch (error) {
     console.error('Publish error:', error)
-    return NextResponse.json({ error: 'Failed to publish' }, { status: 500 })
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    return NextResponse.json({ error: 'Failed to publish', details: message }, { status: 500 })
   }
 }
