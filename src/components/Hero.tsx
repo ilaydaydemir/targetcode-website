@@ -5,10 +5,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 gradient-bg opacity-20" />
-      <div className="absolute inset-0 bg-[#0A0A0A]/80" />
+    <section className="relative overflow-hidden bg-black/70">
 
       {/* Floating color blobs */}
       <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#2196F3]/15 rounded-full blur-3xl animate-float" />

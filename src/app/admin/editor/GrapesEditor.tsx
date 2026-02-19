@@ -645,6 +645,7 @@ export default function GrapesEditor() {
               uploadName: 'files[]',
               multiUpload: true,
               autoAdd: true,
+              credentials: 'include',
             },
             plugins: [
               gjsPresetWebpage,

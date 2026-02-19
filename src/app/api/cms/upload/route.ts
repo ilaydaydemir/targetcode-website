@@ -12,13 +12,27 @@ export async function POST(req: NextRequest) {
 
   try {
     const formData = await req.formData()
-    const files = formData.getAll('files[]') as File[]
 
+    // GrapeJS sends files as 'files[]'
+    let files = formData.getAll('files[]') as File[]
     if (files.length === 0) {
-      return NextResponse.json({ error: 'No files' }, { status: 400 })
+      files = formData.getAll('files') as File[]
     }
 
-    const uploaded = []
+    // Also check for any file input
+    if (files.length === 0) {
+      for (const [, value] of formData.entries()) {
+        if (value instanceof File) {
+          files.push(value)
+        }
+      }
+    }
+
+    if (files.length === 0) {
+      return NextResponse.json({ error: 'No files', details: 'No files found in form data' }, { status: 400 })
+    }
+
+    const urls: string[] = []
 
     for (const file of files) {
       const ext = file.name.split('.').pop() || 'bin'
@@ -29,19 +43,14 @@ export async function POST(req: NextRequest) {
         addRandomSuffix: false,
       })
 
-      uploaded.push({
-        src: blob.url,
-        name: file.name,
-        type: file.type,
-        width: undefined,
-        height: undefined,
-      })
+      urls.push(blob.url)
     }
 
-    // GrapeJS expects { data: [...] } format
-    return NextResponse.json({ data: uploaded })
+    // GrapeJS expects { data: ['url1', 'url2'] }
+    return NextResponse.json({ data: urls })
   } catch (error) {
     console.error('Upload error:', error)
-    return NextResponse.json({ error: 'Upload failed' }, { status: 500 })
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    return NextResponse.json({ error: 'Upload failed', details: message }, { status: 500 })
   }
 }
