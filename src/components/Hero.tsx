@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-black/20">
+    <section className="relative overflow-hidden bg-black/70">
 
       {/* Floating color blobs */}
       <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#2196F3]/15 rounded-full blur-3xl animate-float" />
@@ -38,7 +38,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-gray-400 mt-6 max-w-3xl mx-auto text-center leading-relaxed"
+          className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto text-center leading-relaxed"
         >
           TargetCode ships with a fully customizable sales app out of the box.
           Tell it what you need — it writes the code, builds the scrapers, and
@@ -55,7 +55,7 @@ export function Hero() {
             href="#early-access"
             className="group px-6 py-3 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(244,67,54,0.4)] transition-all flex items-center justify-center gap-2"
           >
-            Fill Out the Form for Your Custom GTM System
+            Get Early Access
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -66,6 +66,52 @@ export function Hero() {
           </a>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16 w-full max-w-4xl"
+        >
+          <div className="relative">
+            <div className="bg-[#0d0d14] rounded-lg shadow-xl overflow-hidden border border-[#2a2a3e]">
+              <div className="flex items-center p-3 bg-[#111118] border-b border-[#2a2a3e]">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-[#F44336] rounded-full" />
+                  <div className="w-3 h-3 bg-[#FFEB3B] rounded-full" />
+                  <div className="w-3 h-3 bg-[#4CAF50] rounded-full" />
+                </div>
+                <div className="ml-4 text-xs text-gray-500 font-[var(--font-roboto-mono)]">
+                  app.targetcode.io/engine
+                </div>
+              </div>
+              <div className="p-4 font-[var(--font-roboto-mono)] text-sm text-[#4CAF50] overflow-x-auto">
+                <pre className="whitespace-pre-wrap">
+                  <code>{`// Self-Evolving GTM Engine
+const targetCode = {
+  buyer: {
+    company: "Acme Corp",
+    signals: ["raised $5M Series A", "hiring VP Marketing", "launched new product"],
+    persona: "Marketing Leader"
+  },
+
+  async buildWorkflow() {
+    const leads = await this.scraper.findByICP(this.buyer);
+    const enriched = await this.ai.enrich(leads);
+    return this.deploy(enriched);  // Auto-generated pipeline
+  },
+
+  vibeComponent(prompt) {
+    return this.ai.generateReact(prompt);  // Builds its own UI
+  }
+}`}</code>
+                </pre>
+              </div>
+            </div>
+
+            <div className="absolute -right-12 -top-12 w-24 h-24 bg-[#2196F3]/20 rounded-full blur-xl" />
+            <div className="absolute -left-8 -bottom-8 w-16 h-16 bg-[#F44336]/20 rounded-full blur-xl" />
+          </div>
+        </motion.div>
       </div>
     </section>
   )

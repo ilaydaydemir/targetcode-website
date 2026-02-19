@@ -34,7 +34,7 @@ export function EarlyAccess() {
   }
 
   return (
-    <section id="early-access" className="relative py-24 overflow-hidden bg-black/15">
+    <section id="early-access" className="relative py-24 overflow-hidden bg-black/70">
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <motion.div
@@ -46,7 +46,7 @@ export function EarlyAccess() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
             Ready to Transform Your Sales Pipeline?
           </h2>
-          <p className="text-lg text-gray-400 mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-gray-300 mb-10 max-w-xl mx-auto">
             Join the waitlist for early access. Be the first to experience a GTM
             engine that evolves with your business.
           </p>

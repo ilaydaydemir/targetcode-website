@@ -40,7 +40,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-black/15">
+    <section id="how-it-works" className="py-24 bg-black/75">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <motion.p
@@ -65,7 +65,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
           >
             No complex setup. No coding required. Just configure and go.
           </motion.p>
@@ -95,7 +95,7 @@ export function HowItWorks() {
                   STEP {step.step}
                 </span>
                 <h3 className="text-lg font-semibold mt-1 mb-2 text-white">{step.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-300 leading-relaxed">
                   {step.description}
                 </p>
               </div>

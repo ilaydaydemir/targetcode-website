@@ -24,7 +24,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/30 backdrop-blur-md shadow-lg shadow-black/20'
+          ? 'bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
     >
@@ -39,7 +39,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-400 hover:text-[#FFEB3B] transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-[#FFEB3B] transition-colors"
             >
               {link.label}
             </a>
@@ -65,13 +65,13 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-black/30 backdrop-blur-md border-t border-[#2a2a3e]">
+        <div className="md:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#2a2a3e]">
           <div className="pt-2 pb-3 space-y-1 px-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-400 hover:border-[#FFEB3B] hover:text-[#FFEB3B]"
+                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-300 hover:border-[#FFEB3B] hover:text-[#FFEB3B]"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

@@ -57,7 +57,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-black/15">
+    <section id="pricing" className="py-24 bg-black/75">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <motion.p
@@ -82,7 +82,7 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
           >
             Start free, upgrade when you&apos;re ready. No hidden fees.
           </motion.p>
@@ -109,10 +109,10 @@ export function Pricing() {
               )}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-1 text-white">{plan.name}</h3>
-                <p className="text-sm text-gray-400 mb-4">{plan.description}</p>
+                <p className="text-sm text-gray-300 mb-4">{plan.description}</p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  {plan.period && <span className="text-gray-500">{plan.period}</span>}
+                  {plan.period && <span className="text-gray-400">{plan.period}</span>}
                 </div>
               </div>
               <ul className="space-y-3 mb-8 flex-1">

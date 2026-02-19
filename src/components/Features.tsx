@@ -85,7 +85,7 @@ const itemVariants = {
 
 export function Features() {
   return (
-    <section id="features" className="relative py-24 overflow-hidden bg-black/20">
+    <section id="features" className="relative py-24 overflow-hidden bg-black/80">
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-[#2196F3]/5 rounded-full blur-2xl" />
       <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-24 h-24 bg-[#F44336]/5 rounded-full blur-2xl" />
       <div className="relative mx-auto max-w-6xl px-6">
@@ -112,7 +112,7 @@ export function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
           >
             Every feature ships ready to use. Customize everything to match your sales process — no development needed.
           </motion.p>
@@ -139,7 +139,7 @@ export function Features() {
                 <feature.icon className="size-5" style={{ color: feature.color }} />
               </div>
               <h3 className="text-base font-semibold mb-2 text-white">{feature.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
