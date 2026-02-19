@@ -57,15 +57,14 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24">
+    <section id="pricing" className="py-24 bg-[#0d0d14]">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Header */}
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-clay-teal mb-3"
+            className="text-sm font-medium text-[#2196F3] mb-3"
           >
             PRICING
           </motion.p>
@@ -74,7 +73,7 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white"
           >
             Simple, Transparent Pricing
           </motion.h2>
@@ -83,13 +82,12 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
           >
             Start free, upgrade when you&apos;re ready. No hidden fees.
           </motion.p>
         </div>
 
-        {/* Plans */}
         <div className="grid gap-8 md:grid-cols-3">
           {plans.map((plan, i) => (
             <motion.div
@@ -100,41 +98,37 @@ export function Pricing() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`rounded-2xl border p-8 flex flex-col ${
                 plan.highlighted
-                  ? 'border-clay-teal bg-card shadow-xl glow relative'
-                  : 'border-border bg-card'
+                  ? 'border-[#4CAF50] bg-[#111118] shadow-[0_0_60px_rgba(76,175,80,0.15)] relative'
+                  : 'border-[#2a2a3e] bg-[#111118]'
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium bg-clay-teal text-clay-teal-foreground rounded-full px-4 py-1">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white rounded-full px-4 py-1">
                   Most Popular
                 </div>
               )}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {plan.description}
-                </p>
+                <h3 className="text-lg font-semibold mb-1 text-white">{plan.name}</h3>
+                <p className="text-sm text-gray-400 mb-4">{plan.description}</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.period && (
-                    <span className="text-muted-foreground">{plan.period}</span>
-                  )}
+                  <span className="text-4xl font-bold text-white">{plan.price}</span>
+                  {plan.period && <span className="text-gray-500">{plan.period}</span>}
                 </div>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="size-4 text-clay-teal shrink-0 mt-0.5" />
+                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-300">
+                    <Check className="size-4 text-[#4CAF50] shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
               </ul>
               <a
                 href="#early-access"
-                className={`block rounded-xl py-3 text-sm font-medium text-center transition-colors ${
+                className={`block rounded-xl py-3 text-sm font-medium text-center transition-all ${
                   plan.highlighted
-                    ? 'bg-clay-teal text-clay-teal-foreground hover:bg-clay-teal/90'
-                    : 'border border-border text-foreground hover:bg-muted'
+                    ? 'bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white hover:shadow-[0_0_20px_rgba(76,175,80,0.3)]'
+                    : 'border border-[#2a2a3e] text-gray-300 hover:border-[#FFEB3B] hover:text-[#FFEB3B]'
                 }`}
               >
                 {plan.cta}

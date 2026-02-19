@@ -2,19 +2,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #0a0a1a;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
-  --color-primary: #2563eb;
+  --color-background: #0A0A0A;
+  --color-foreground: #ffffff;
+  --color-muted: #1a1a2e;
+  --color-muted-foreground: #a0a0b0;
+  --color-primary: #2196F3;
   --color-primary-foreground: #ffffff;
-  --color-accent: #3b82f6;
-  --color-border: #e2e8f0;
-  --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
-  --color-section-alt: #f9fafb;
-  --color-clay-teal: #38bec9;
-  --color-clay-orange: #f97316;
+  --color-accent: #F44336;
+  --color-accent-yellow: #FFEB3B;
+  --color-accent-green: #4CAF50;
+  --color-accent-blue: #2196F3;
+  --color-accent-red: #F44336;
+  --color-border: #2a2a3e;
+  --color-card: #111118;
+  --color-card-foreground: #ffffff;
+  --color-section-alt: #0d0d14;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "Roboto Mono", ui-monospace, monospace;
 }
@@ -31,16 +33,29 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: #f9fafb;
-  color: var(--color-foreground);
+  background: #0A0A0A;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Animated gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #38bec9 0%, #2563eb 50%, #38bec9 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #F44336 0%, #FFEB3B 33%, #4CAF50 66%, #2196F3 100%);
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -52,9 +67,25 @@ body {
   50% { background-position: 100% center; }
 }
 
-/* Glow effect */
+/* Glow effects */
 .glow {
-  box-shadow: 0 0 60px rgba(56, 190, 201, 0.15), 0 0 120px rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 60px rgba(33, 150, 243, 0.15), 0 0 120px rgba(244, 67, 54, 0.08);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.3);
 }
 
 /* Floating animation */

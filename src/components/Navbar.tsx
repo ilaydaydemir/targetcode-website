@@ -24,62 +24,54 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white shadow-sm'
+          ? 'bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo — Roboto Mono like old site */}
         <a href="#" className="text-2xl font-bold font-[var(--font-roboto-mono)] tracking-tight">
-          <span className={scrolled ? 'text-gray-900' : 'text-white'}>TargetCode</span>
-          <span className="text-clay-teal">.io</span>
+          <span className="text-white">TargetCode</span>
+          <span className="text-[#4CAF50]">.io</span>
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                scrolled
-                  ? 'text-gray-700 hover:text-gray-900'
-                  : 'text-gray-300 hover:text-white'
-              }`}
+              className="text-sm font-medium text-gray-400 hover:text-[#FFEB3B] transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#early-access"
-            className="px-6 py-2.5 bg-clay-teal text-white font-medium rounded-md hover:opacity-90 transition-all text-sm"
+            className="px-6 py-2.5 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all text-sm"
           >
             Get Early Access
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
-            <X className={`size-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+            <X className="size-6 text-white" />
           ) : (
-            <Menu className={`size-6 ${scrolled ? 'text-gray-900' : 'text-white'}`} />
+            <Menu className="size-6 text-white" />
           )}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow-lg rounded-b-lg">
+        <div className="md:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#2a2a3e]">
           <div className="pt-2 pb-3 space-y-1 px-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-400 hover:border-[#FFEB3B] hover:text-[#FFEB3B]"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -88,7 +80,7 @@ export function Navbar() {
             <div className="mt-4 space-y-2">
               <a
                 href="#early-access"
-                className="block w-full px-6 py-3 bg-clay-teal text-white font-medium rounded-md text-center hover:opacity-90 transition-all"
+                className="block w-full px-6 py-3 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl text-center hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Early Access
