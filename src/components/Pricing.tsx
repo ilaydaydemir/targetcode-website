@@ -57,14 +57,14 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-black/85">
+    <section id="pricing" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-sm font-medium text-[#2196F3] mb-3"
+            className="text-sm font-bold text-white uppercase tracking-widest mb-3"
           >
             PRICING
           </motion.p>
@@ -73,7 +73,7 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white text-shadow"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-black"
           >
             Simple, Transparent Pricing
           </motion.h2>
@@ -82,7 +82,7 @@ export function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            className="text-lg text-black/70 max-w-2xl mx-auto font-medium"
           >
             Start free, upgrade when you&apos;re ready. No hidden fees.
           </motion.p>
@@ -96,28 +96,28 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-2xl border p-8 flex flex-col ${
+              className={`rounded-2xl p-8 flex flex-col backdrop-blur-sm shadow-lg border ${
                 plan.highlighted
-                  ? 'border-[#4CAF50] bg-[#111118] shadow-[0_0_60px_rgba(76,175,80,0.15)] relative'
-                  : 'border-[#2a2a3e] bg-[#111118]'
+                  ? 'bg-white/95 border-[#4CAF50] shadow-xl relative'
+                  : 'bg-white/80 border-white/50'
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-medium bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white rounded-full px-4 py-1">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white rounded-full px-4 py-1">
                   Most Popular
                 </div>
               )}
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-1 text-white">{plan.name}</h3>
-                <p className="text-sm text-gray-300 mb-4">{plan.description}</p>
+                <h3 className="text-lg font-bold mb-1 text-black">{plan.name}</h3>
+                <p className="text-sm text-black/60 mb-4">{plan.description}</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
-                  {plan.period && <span className="text-gray-400">{plan.period}</span>}
+                  <span className="text-4xl font-bold text-black">{plan.price}</span>
+                  {plan.period && <span className="text-black/50">{plan.period}</span>}
                 </div>
               </div>
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-300">
+                  <li key={feature} className="flex items-start gap-2 text-sm text-black/70">
                     <Check className="size-4 text-[#4CAF50] shrink-0 mt-0.5" />
                     {feature}
                   </li>
@@ -125,10 +125,10 @@ export function Pricing() {
               </ul>
               <a
                 href="#inquiry"
-                className={`block rounded-xl py-3 text-sm font-medium text-center transition-all ${
+                className={`block rounded-xl py-3 text-sm font-bold text-center transition-all ${
                   plan.highlighted
-                    ? 'bg-gradient-to-r from-[#4CAF50] to-[#2196F3] text-white hover:shadow-[0_0_20px_rgba(76,175,80,0.3)]'
-                    : 'border border-[#2a2a3e] text-gray-300 hover:border-[#FFEB3B] hover:text-[#FFEB3B]'
+                    ? 'bg-black text-white hover:bg-black/80'
+                    : 'border border-black/20 text-black hover:bg-black/5'
                 }`}
               >
                 {plan.cta}
