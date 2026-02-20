@@ -25,14 +25,14 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0A0A0A]/95 backdrop-blur-md shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? 'bg-white/90 backdrop-blur-md shadow-lg'
+          : 'bg-white/70 backdrop-blur-sm'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
           <Image src="/logo-icon.svg" alt="TargetCode" width={36} height={36} />
-          <span className="text-xl font-bold font-[var(--font-roboto-mono)] tracking-tight text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+          <span className="text-xl font-bold font-[var(--font-roboto-mono)] tracking-tight text-black">
             targetcode<span className="text-[#4CAF50]">.io</span>
           </span>
         </a>
@@ -42,14 +42,14 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-300 hover:text-[#FFEB3B] transition-colors"
+              className="text-sm font-semibold text-black/70 hover:text-black transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#inquiry"
-            className="px-6 py-2.5 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all text-sm"
+            className="px-6 py-2.5 bg-black text-white font-semibold rounded-xl hover:bg-black/80 transition-all text-sm"
           >
             Book a Call
           </a>
@@ -60,21 +60,21 @@ export function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
-            <X className="size-6 text-white" />
+            <X className="size-6 text-black" />
           ) : (
-            <Menu className="size-6 text-white" />
+            <Menu className="size-6 text-black" />
           )}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-[#0A0A0A]/95 backdrop-blur-md border-t border-[#2a2a3e]">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-black/10">
           <div className="pt-2 pb-3 space-y-1 px-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block py-2 pl-3 border-l-4 border-transparent text-base font-medium text-gray-300 hover:border-[#FFEB3B] hover:text-[#FFEB3B]"
+                className="block py-2 pl-3 border-l-4 border-transparent text-base font-semibold text-black/70 hover:border-black hover:text-black"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -83,7 +83,7 @@ export function Navbar() {
             <div className="mt-4 space-y-2">
               <a
                 href="#inquiry"
-                className="block w-full px-6 py-3 bg-gradient-to-r from-[#F44336] to-[#FFEB3B] text-[#0A0A0A] font-semibold rounded-xl text-center hover:shadow-[0_0_20px_rgba(244,67,54,0.3)] transition-all"
+                className="block w-full px-6 py-3 bg-black text-white font-semibold rounded-xl text-center hover:bg-black/80 transition-all"
                 onClick={() => setMobileOpen(false)}
               >
                 Book a Call

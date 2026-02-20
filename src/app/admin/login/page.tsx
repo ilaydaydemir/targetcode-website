@@ -26,7 +26,7 @@ export default function AdminLogin() {
         return
       }
 
-      router.push('/admin/editor')
+      router.push('/admin/dashboard')
     } catch {
       setError('Something went wrong')
     } finally {
@@ -35,38 +35,65 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <div className="w-full max-w-sm">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-          <h1 className="text-2xl font-bold text-center mb-1">
-            <span className="text-gray-900">TargetCode</span>
-            <span className="text-[#38bec9]">.io</span>
+    <div className="flex items-center justify-center" style={{ minHeight: '100vh' }}>
+      <div style={{ width: '100%', maxWidth: '400px', padding: '0 16px' }}>
+        <div style={{
+          background: '#ffffff',
+          borderRadius: '12px',
+          border: '1px solid #e5e7eb',
+          padding: '32px',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+        }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 700, textAlign: 'center', marginBottom: '4px', color: '#111' }}>
+            TargetCode<span style={{ color: '#4CAF50' }}>.io</span>
           </h1>
-          <p className="text-sm text-gray-500 text-center mb-6">Admin Panel</p>
+          <p style={{ fontSize: '14px', color: '#6b7280', textAlign: 'center', marginBottom: '24px' }}>
+            Admin Panel
+          </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+          <form onSubmit={handleSubmit}>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#374151', marginBottom: '6px' }}>
                 Password
               </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-[#38bec9] focus:ring-2 focus:ring-[#38bec9]/20"
                 placeholder="Enter admin password"
                 required
+                style={{
+                  width: '100%',
+                  borderRadius: '8px',
+                  border: '1px solid #d1d5db',
+                  padding: '10px 16px',
+                  fontSize: '14px',
+                  color: '#111',
+                  background: '#fff',
+                  outline: 'none',
+                }}
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-500">{error}</p>
+              <p style={{ fontSize: '14px', color: '#ef4444', marginBottom: '16px' }}>{error}</p>
             )}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-lg bg-[#38bec9] px-4 py-2.5 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+              style={{
+                width: '100%',
+                borderRadius: '8px',
+                background: '#111',
+                color: '#fff',
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: 600,
+                border: 'none',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                opacity: loading ? 0.5 : 1,
+              }}
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
