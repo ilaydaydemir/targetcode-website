@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background shape: rounded square with speech bubble notch -->
+  <defs>
+    <clipPath id="shape">
+      <path d="M24 0h72a24 24 0 0124 24v60a24 24 0 01-24 24H62l-8 12-8-12H24A24 24 0 010 84V24A24 24 0 0124 0z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shape)">
+    <!-- Red: top-left -->
+    <rect x="0" y="0" width="60" height="60" fill="#F44336"/>
+    <!-- Green: top-right -->
+    <rect x="60" y="0" width="60" height="60" fill="#4CAF50"/>
+    <!-- Blue: bottom-center -->
+    <rect x="0" y="60" width="120" height="60" fill="#2196F3"/>
+    <!-- Red bleed bottom-left -->
+    <circle cx="15" cy="75" r="28" fill="#F44336"/>
+    <!-- Green bleed bottom-right -->
+    <circle cx="105" cy="48" r="22" fill="#4CAF50"/>
+    <!-- Yellow T letter -->
+    <rect x="16" y="18" width="88" height="20" rx="10" fill="#FFEB3B"/>
+    <rect x="42" y="18" width="24" height="72" rx="10" fill="#FFEB3B"/>
+  </g>
+</svg>

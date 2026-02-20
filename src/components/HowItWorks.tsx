@@ -40,7 +40,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-black/75">
+    <section id="how-it-works" className="py-24 bg-black/85">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <motion.p
@@ -56,7 +56,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white"
+            className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white text-shadow"
           >
             From Zero to Revenue in Four Steps
           </motion.h2>

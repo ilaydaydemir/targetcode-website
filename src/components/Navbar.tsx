@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
@@ -29,9 +30,11 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="text-2xl font-bold font-[var(--font-roboto-mono)] tracking-tight">
-          <span className="text-white">TargetCode</span>
-          <span className="text-[#4CAF50]">.io</span>
+        <a href="#" className="flex items-center gap-2.5">
+          <Image src="/logo-icon.svg" alt="TargetCode" width={36} height={36} />
+          <span className="text-xl font-bold font-[var(--font-roboto-mono)] tracking-tight text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+            targetcode<span className="text-[#4CAF50]">.io</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">

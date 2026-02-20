@@ -33,9 +33,9 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: linear-gradient(-45deg, #F44336, #FFEB3B, #4CAF50, #2196F3, #F44336, #FFEB3B);
-  background-size: 600% 600%;
-  animation: gradientShift 20s ease infinite;
+  background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,12 +46,20 @@ main, section, footer, nav {
   position: relative;
 }
 
+.dark-overlay {
+  background-color: rgba(10, 10, 10, 0.85);
+}
+
 /* Animated gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, #2196F3, #4CAF50, #FFEB3B, #F44336);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
-  25% { background-position: 50% 100%; }
   50% { background-position: 100% 50%; }
-  75% { background-position: 50% 0%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -68,11 +76,6 @@ main, section, footer, nav {
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% center; }
   50% { background-position: 100% center; }
-}
-
-/* Text shadow for readability on bright gradient */
-h1, h2, h3, h4, p, span, li, a, label, button {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 /* Glow effects */
@@ -112,4 +115,13 @@ h1, h2, h3, h4, p, span, li, a, label, button {
 
 .animate-float-delay-2 {
   animation: float 6s ease-in-out 4s infinite;
+}
+
+/* Text shadow for readability on gradient backgrounds */
+.text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }

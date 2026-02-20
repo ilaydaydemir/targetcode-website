@@ -1,15 +1,18 @@
+import Image from 'next/image'
+
 export function Footer() {
   return (
     <footer className="bg-black/90 text-white border-t border-[#1a1a2e]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2.5">
+              <Image src="/logo-icon.svg" alt="TargetCode" width={40} height={40} />
               <span className="text-2xl font-bold font-[var(--font-roboto-mono)]">
-                TargetCode<span className="text-[#4CAF50]">.io</span>
+                targetcode<span className="text-[#4CAF50]">.io</span>
               </span>
             </div>
-            <p className="mt-4 text-gray-400 max-w-sm">
+            <p className="mt-4 text-gray-300 max-w-sm">
               Self-evolving GTM engine for modern sales teams. We don&apos;t just outbound — we build.
             </p>
             <div className="mt-6 flex space-x-6">
@@ -29,25 +32,25 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
               Company
             </h3>
             <ul className="mt-4 space-y-4">
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">About</a></li>
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">Careers</a></li>
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">Blog</a></li>
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">Privacy</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">About</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">Careers</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">Blog</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">Privacy</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+            <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
               Resources
             </h3>
             <ul className="mt-4 space-y-4">
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">API Reference</a></li>
-              <li><a href="mailto:hello@targetcode.io" className="text-base text-gray-400 hover:text-[#FFEB3B] transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">Documentation</a></li>
+              <li><a href="#" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">API Reference</a></li>
+              <li><a href="mailto:hello@targetcode.io" className="text-base text-gray-300 hover:text-[#FFEB3B] transition-colors">Contact Us</a></li>
             </ul>
           </div>
         </div>

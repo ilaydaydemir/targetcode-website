@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-black/70">
+    <section className="relative overflow-hidden bg-black/85">
 
       {/* Floating color blobs */}
       <div className="absolute -right-20 -top-20 w-60 h-60 bg-[#2196F3]/15 rounded-full blur-3xl animate-float" />
@@ -28,7 +28,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-center font-[var(--font-roboto-mono)]"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-center font-[var(--font-roboto-mono)] text-shadow"
         >
           <span className="block text-white">Outbound is static.</span>
           <span className="block mt-2 gradient-text">Your GTM engine is dynamic.</span>
@@ -38,7 +38,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto text-center leading-relaxed"
+          className="text-xl text-gray-200 mt-6 max-w-3xl mx-auto text-center leading-relaxed text-shadow-sm"
         >
           TargetCode ships with a fully customizable sales app out of the box.
           Tell it what you need — it writes the code, builds the scrapers, and

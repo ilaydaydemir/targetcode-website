@@ -40,7 +40,7 @@ export function EarlyAccess() {
   }
 
   return (
-    <section id="inquiry" className="relative py-24 overflow-hidden bg-black/70">
+    <section id="inquiry" className="relative py-24 overflow-hidden bg-black/85">
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <motion.div
@@ -49,7 +49,7 @@ export function EarlyAccess() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-white text-shadow">
             Get Your Custom GTM System
           </h2>
           <p className="text-lg text-gray-300 mb-10 max-w-xl mx-auto">

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none">
+  <!-- Icon -->
+  <defs>
+    <clipPath id="iconShape2">
+      <path d="M24 0h72a24 24 0 0124 24v60a24 24 0 01-24 24H62l-8 12-8-12H24A24 24 0 010 84V24A24 24 0 0124 0z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#iconShape2)">
+    <rect x="0" y="0" width="60" height="60" fill="#F44336"/>
+    <rect x="60" y="0" width="60" height="60" fill="#4CAF50"/>
+    <rect x="0" y="60" width="120" height="60" fill="#2196F3"/>
+    <circle cx="15" cy="75" r="28" fill="#F44336"/>
+    <circle cx="105" cy="48" r="22" fill="#4CAF50"/>
+    <rect x="16" y="18" width="88" height="20" rx="10" fill="#FFEB3B"/>
+    <rect x="42" y="18" width="24" height="72" rx="10" fill="#FFEB3B"/>
+  </g>
+  <!-- Text: targetcode.io in dark -->
+  <text x="135" y="62" font-family="'Roboto Mono', monospace" font-size="36" font-weight="700" fill="#0A0A0A">targetcode</text>
+  <text x="135" y="92" font-family="'Roboto Mono', monospace" font-size="36" font-weight="700" fill="#4CAF50">.io</text>
+</svg>
