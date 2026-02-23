@@ -41,18 +41,18 @@ export function EarlyAccess() {
 
   return (
     <section id="inquiry" className="relative py-24 overflow-hidden">
-
-      <div className="relative mx-auto max-w-3xl px-6 text-center">
+      <div className="relative mx-auto max-w-2xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl border border-white/50 p-8 md:p-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-black">
             Get Your Custom GTM System
           </h2>
-          <p className="text-lg text-black/70 mb-10 max-w-xl mx-auto font-medium">
+          <p className="text-lg text-black/70 mb-8 max-w-xl mx-auto font-medium">
             Book a sales call to learn how TargetCode can build a self-evolving
             GTM engine tailored to your business.
           </p>
@@ -61,7 +61,7 @@ export function EarlyAccess() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#4CAF50]/30 px-8 py-4 shadow-lg"
+              className="inline-flex items-center gap-3 rounded-2xl bg-[#4CAF50]/10 border border-[#4CAF50]/30 px-8 py-4"
             >
               <CheckCircle2 className="size-5 text-[#4CAF50]" />
               <span className="text-black font-medium">
@@ -80,14 +80,14 @@ export function EarlyAccess() {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
                   required
-                  className="flex-1 w-full rounded-xl border border-white/50 bg-white/80 backdrop-blur-sm px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40 shadow-sm"
+                  className="flex-1 w-full rounded-xl border border-black/20 bg-white px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40"
                 />
                 <input
                   type="text"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   placeholder="Company (optional)"
-                  className="flex-1 w-full rounded-xl border border-white/50 bg-white/80 backdrop-blur-sm px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40 shadow-sm"
+                  className="flex-1 w-full rounded-xl border border-black/20 bg-white px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40"
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -97,7 +97,7 @@ export function EarlyAccess() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Work email"
                   required
-                  className="flex-1 w-full rounded-xl border border-white/50 bg-white/80 backdrop-blur-sm px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40 shadow-sm"
+                  className="flex-1 w-full rounded-xl border border-black/20 bg-white px-5 py-3.5 text-sm text-black outline-none focus:border-[#2196F3] focus:ring-2 focus:ring-[#2196F3]/20 transition-all placeholder:text-black/40"
                 />
                 <button
                   type="submit"
