@@ -34,7 +34,7 @@ const plans = [
       'Webhook & API sources',
       'Priority support',
     ],
-    cta: 'Book a Call',
+    cta: 'Book a Discovery Call',
     highlighted: true,
   },
   {

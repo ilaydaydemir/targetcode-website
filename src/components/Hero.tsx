@@ -49,7 +49,7 @@ export function Hero() {
             href="#inquiry"
             className="group px-8 py-4 bg-black text-white font-bold rounded-2xl hover:bg-black/80 transition-all flex items-center justify-center gap-2 text-lg shadow-xl"
           >
-            Book a Sales Call
+            Book a Discovery Call
             <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a

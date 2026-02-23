@@ -179,7 +179,7 @@ const defaultTemplate = `
       <a href="#how-it-works">How It Works</a>
       <a href="#self-building">Self-Building</a>
       <a href="#pricing">Pricing</a>
-      <a href="#inquiry" class="nav-cta">Book a Call</a>
+      <a href="#inquiry" class="nav-cta">Book a Discovery Call</a>
     </div>
   </div>
 </nav>
@@ -191,7 +191,7 @@ const defaultTemplate = `
     <h1><span class="white-text">Outbound is static.</span><br><span class="black-text">Your GTM engine is dynamic.</span></h1>
     <p>TargetCode ships with a fully customizable sales app out of the box. Tell it what you need — it writes the code, builds the scrapers, and evolves with every interaction.</p>
     <div class="hero-buttons">
-      <a href="#inquiry" class="btn-primary">Book a Sales Call &rarr;</a>
+      <a href="#inquiry" class="btn-primary">Book a Discovery Call &rarr;</a>
       <a href="#how-it-works" class="btn-secondary">See How It Works</a>
     </div>
   </div>
@@ -407,7 +407,7 @@ const defaultTemplate = `
           <li>Webhook &amp; API sources</li>
           <li>Priority support</li>
         </ul>
-        <a href="#inquiry" class="price-cta primary">Book a Call</a>
+        <a href="#inquiry" class="price-cta primary">Book a Discovery Call</a>
       </div>
       <div class="price-card">
         <h3>Enterprise</h3>
@@ -431,7 +431,7 @@ const defaultTemplate = `
 <section id="inquiry" class="cta-section">
   <div class="cta-inner">
     <h2>Get Your Custom GTM System</h2>
-    <p>Book a sales call to learn how TargetCode can build a self-evolving GTM engine tailored to your business.</p>
+    <p>Book a discovery call to learn how TargetCode can build a self-evolving GTM engine tailored to your business.</p>
     <form class="cta-form" data-gjs-type="form" action="/api/inquiry" method="POST">
       <div class="cta-form-row">
         <input type="text" name="name" placeholder="Your name" required />
@@ -439,7 +439,7 @@ const defaultTemplate = `
       </div>
       <div class="cta-form-row">
         <input type="email" name="email" placeholder="Work email" required />
-        <button type="submit">Book a Sales Call &rarr;</button>
+        <button type="submit">Book a Discovery Call &rarr;</button>
       </div>
     </form>
   </div>

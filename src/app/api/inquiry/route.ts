@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       subject: `New GTM System Inquiry: ${name}${company ? ` (${company})` : ''}`,
       html: `
         <div style="font-family: Inter, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px;">
-          <h2 style="color: #111827; margin-bottom: 16px;">New Sales Call Request</h2>
+          <h2 style="color: #111827; margin-bottom: 16px;">New Discovery Call Request</h2>
           <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px;">
             <p style="margin: 0; color: #6b7280; font-size: 14px;">Name</p>
             <p style="margin: 4px 0 16px 0; color: #111827; font-size: 16px; font-weight: 600;">${name}</p>
@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
           <div style="background: linear-gradient(135deg, rgba(33,150,243,0.1), rgba(76,175,80,0.1)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px;">
             <h2 style="color: #ffffff; font-size: 22px; margin: 0 0 12px;">Hi ${name},</h2>
             <p style="color: #d1d5db; font-size: 15px; line-height: 1.6; margin: 0;">
-              Thanks for your interest in a custom GTM system. We received your inquiry and our team will reach out shortly to schedule a sales call with you.
+              Thanks for your interest in a custom GTM system. We received your inquiry and our team will reach out shortly to schedule a discovery call with you.
             </p>
           </div>
           <div style="margin-top: 28px; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px;">

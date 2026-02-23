@@ -51,7 +51,7 @@ export function Navbar() {
             href="#inquiry"
             className="px-6 py-2.5 bg-black text-white font-semibold rounded-xl hover:bg-black/80 transition-all text-sm"
           >
-            Book a Call
+            Discovery Call
           </a>
         </div>
 
@@ -86,7 +86,7 @@ export function Navbar() {
                 className="block w-full px-6 py-3 bg-black text-white font-semibold rounded-xl text-center hover:bg-black/80 transition-all"
                 onClick={() => setMobileOpen(false)}
               >
-                Book a Call
+                Discovery Call
               </a>
             </div>
           </div>

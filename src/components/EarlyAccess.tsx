@@ -131,7 +131,7 @@ export function EarlyAccess() {
                   <Loader2 className="size-4 animate-spin" />
                 ) : (
                   <>
-                    Book a Sales Call
+                    Book a Discovery Call
                     <ArrowRight className="size-4" />
                   </>
                 )}
